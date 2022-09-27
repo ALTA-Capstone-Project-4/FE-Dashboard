@@ -1,0 +1,34 @@
+.conten {
+  width: 386px;
+  height: 572px;
+  border: 2px solid #c0c0c0;
+  margin: auto;
+  margin-top: 92px;
+  margin-bottom: 92px;
+  border-radius: 8px;
+}
+
+.conten h1 {
+  font-size: 24px;
+  color: #fa990e;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 82px;
+  margin-bottom: 47px;
+}
+
+.byloging {
+  font-size: 14px;
+}
+
+.buttonlogin {
+  width: 350px;
+  background-color: #104b0b;
+  font-size: 18px;
+  border: #104b0b solid;
+}
+
+.plog a {
+  text-decoration: none;
+  color: #fa990e;
+}
