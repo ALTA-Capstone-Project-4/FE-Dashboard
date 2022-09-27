@@ -1,0 +1,18 @@
+.contenreg {
+  width: 386px;
+  height: 670px;
+  border: 2px solid #c0c0c0;
+  margin: auto;
+  margin-top: 92px;
+  margin-bottom: 92px;
+  border-radius: 8px;
+}
+
+.contenreg h1 {
+  font-size: 24px;
+  color: #fa990e;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
