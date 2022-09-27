@@ -1,0 +1,66 @@
+.contenmit {
+  width: 700px;
+  height: 610px;
+  border: 2px solid #c0c0c0;
+  margin: auto;
+  margin-top: 92px;
+  margin-bottom: 92px;
+  border-radius: 8px;
+}
+
+.contenmit h1 {
+  font-size: 24px;
+  color: #fa990e;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.btnuplod {
+  width: 107px;
+  height: 26px;
+  background-color: #104b0b;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.boxktp {
+  width: 260px;
+  height: 170px;
+  border: #c0c0c0 solid 2px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.boxplusktp {
+  width: 70px;
+  height: 70px;
+  border: #c0c0c0 solid 2px;
+  font-size: 35px;
+}
+
+.btnreg {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 575px) {
+  .contenmit {
+    width: 386px;
+    height: 850px;
+    border: 2px solid #c0c0c0;
+    margin: auto;
+    margin-top: 92px;
+    margin-bottom: 92px;
+    border-radius: 8px;
+  }
+
+  .upld {
+    margin: auto;
+    margin-left: 10px;
+  }
+}

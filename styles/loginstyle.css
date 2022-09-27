@@ -1,6 +1,6 @@
 .conten {
   width: 386px;
-  height: 572px;
+  height: 560px;
   border: 2px solid #c0c0c0;
   margin: auto;
   margin-top: 92px;
@@ -19,6 +19,7 @@
 
 .byloging {
   font-size: 14px;
+  margin-bottom: 50px;
 }
 
 .buttonlogin {
