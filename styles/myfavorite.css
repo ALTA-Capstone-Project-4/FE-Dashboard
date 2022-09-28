@@ -1,0 +1,42 @@
+.favoritsaya {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cardfav {
+  width: 250px;
+  height: auto;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.gambarfav {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.btnpsn {
+  width: 246px;
+  background-color: #104b0b;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.btnpsn2 {
+  width: 246px;
+  background-color: #104b0b;
+  color: white;
+}
+
+.contenmyfav {
+  align-items: center;
+  margin: auto;
+  margin-bottom: 80px;
+}
