@@ -5,6 +5,7 @@ import "../styles/registerclientstyle.css";
 import "../styles/registermitrastyle.css";
 import "../styles/comeditlahan.css";
 import "../styles/adminverif.css";
+import "../styles/detailmitra.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

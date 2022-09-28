@@ -1,17 +1,17 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import Navbarcom from "../component/navbarcomp";
+import Footer from "../component/footer";
 
 const RegisterClient = () => {
   return (
     <div>
-      <Navbarcom />
       <div className="contenreg">
         <h1>YOUR ACCOUNT FOR EVERYTHING WH</h1>
 
         <Form className="mx-3">
           <Form.Group className="mb-2">
-            <Form.Control type="email" placeholder="Enter Name" />
+            <Form.Control type="text" placeholder="Masukan Nama" />
           </Form.Group>
 
           <Form.Group className="mb-2">
@@ -21,7 +21,7 @@ const RegisterClient = () => {
             <Form.Control type="text" placeholder="No.Handphone" />
           </Form.Group>
           <Form.Group className="mb-2">
-            <Form.Control type="email" placeholder="Email" />
+            <Form.Control type="email" placeholder=" Masukan Email" />
           </Form.Group>
           <Form.Group className="mb-2">
             <Form.Control type="password" placeholder="password" />
@@ -29,15 +29,16 @@ const RegisterClient = () => {
           </Form.Group>
 
           <Button className="buttonloginc mt-2" type="submit">
-            Register
+            Daftar
           </Button>
         </Form>
         <div>
           <p className="plog text-center mt-1">
-            Have an Account ? <a href="/login">Login</a>
+            Sudah Punya Akun ? <a href="/login">Masuk</a>
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
