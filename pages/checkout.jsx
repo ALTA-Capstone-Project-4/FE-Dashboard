@@ -53,6 +53,10 @@ const Checkout = () => {
                 </Form.Select>
               </Col>
             </Row>
+            <div className="gas">
+              <h5 className="total">Total : Rp.2.000.000</h5>
+              <button className="btnpsna">Pesan</button>
+            </div>
           </div>
         </Col>
       </Row>

@@ -16,6 +16,22 @@
   margin-right: 50px;
   margin-left: 50px;
 }
+.total {
+  margin-top: 10px;
+}
+
+.gas {
+  text-align: end;
+}
+
+.btnpsna {
+  background-color: #104b0b;
+  width: 100px;
+  height: 35px;
+  border-radius: 8px;
+  color: white;
+  margin-top: 10px;
+}
 
 @media (max-width: 1296px) {
   .checkl {

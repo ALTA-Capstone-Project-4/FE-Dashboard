@@ -13,9 +13,11 @@ const MyFavorit = () => {
   return (
     <div>
       <Navbarr />
-      <Row>
+      <Row className="gx-0">
         <Col lg={4}>
-          <Sidebar />
+          <div className="sdbr">
+            <Sidebar />
+          </div>
         </Col>
         <Col lg={8}>
           <h3 className="favoritsaya">Favorit Saya</h3>
