@@ -40,3 +40,20 @@ p {
   margin: auto;
   margin-bottom: 80px;
 }
+
+@media (max-width: 991px) {
+  .sdbr {
+    margin: 0px auto;
+    float: none;
+    display: table;
+  }
+}
+
+@media (max-width: 440px) {
+  .sdbr {
+    margin: 0px auto;
+    float: none;
+    display: table;
+    width: 100px;
+  }
+}

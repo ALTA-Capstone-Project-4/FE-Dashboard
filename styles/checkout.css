@@ -1,0 +1,143 @@
+.checkl {
+  margin-left: 60px;
+  margin-bottom: 150px;
+}
+
+.checkpic {
+  width: 400px;
+  height: 400px;
+  border: 2px solid black;
+}
+
+.checkr {
+  width: 800px;
+  border: 2px solid #fa990e;
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+.total {
+  margin-top: 10px;
+}
+
+.gas {
+  text-align: end;
+}
+
+.btnpsna {
+  background-color: #104b0b;
+  width: 100px;
+  height: 35px;
+  border-radius: 8px;
+  color: white;
+  margin-top: 10px;
+}
+
+@media (max-width: 1296px) {
+  .checkl {
+    margin-left: 60px;
+  }
+
+  .checkpic {
+    width: 340px;
+    height: 340px;
+    border: 2px solid black;
+  }
+
+  .checkr {
+    width: 650px;
+    border: 2px solid #fa990e;
+    padding: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 1098px) {
+  .checkl {
+    margin-left: 60px;
+  }
+
+  .checkpic {
+    width: 320px;
+    height: 320px;
+    border: 2px solid black;
+  }
+
+  .checkr {
+    width: 600px;
+    border: 2px solid #fa990e;
+    padding: 20px;
+    margin-right: 50px;
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 991px) {
+  .checkl {
+    margin: auto;
+    text-align: center;
+  }
+
+  .checkpic {
+    width: 320px;
+    height: 320px;
+    border: 2px solid black;
+    margin: auto;
+    text-align: center;
+  }
+
+  .checkr {
+    width: 700px;
+    border: 2px solid #fa990e;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 710px) {
+  .checkl {
+    margin: auto;
+    text-align: center;
+  }
+
+  .checkpic {
+    width: 320px;
+    height: 320px;
+    border: 2px solid black;
+    margin: auto;
+    text-align: center;
+  }
+
+  .checkr {
+    width: 500px;
+    border: 2px solid #fa990e;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 510px) {
+  .checkl {
+    margin: auto;
+    text-align: center;
+  }
+
+  .checkpic {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    margin: auto;
+    text-align: center;
+  }
+
+  .checkr {
+    width: 300px;
+    border: 2px solid #fa990e;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}

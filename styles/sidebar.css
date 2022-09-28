@@ -1,29 +1,29 @@
-.sideb{
-    margin: 50px;
+.sideb {
+  margin: 50px;
 }
 
 #side_nav {
-    min-width: 330px;
-    max-width: 330px;
-    background-color: #fff;
-    border: 3px solid #104B0B;
-    min-height: 75%;
+  min-width: 330px;
+  max-width: 330px;
+  background-color: #fff;
+  border: 3px solid #104b0b;
+  min-height: 75%;
 }
 
 .isisidebar {
-    margin: auto;
-    margin-top: 16px;
+  margin: auto;
+  margin-top: 16px;
 }
-  
+
 .sidebar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #104B0B;
-    display: block;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #104b0b;
+  display: block;
 }
-  
+
 .sidebar a:hover {
-    color: #FA990E;
+  color: #fa990e;
 }
