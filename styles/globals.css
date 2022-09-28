@@ -9,3 +9,20 @@
 .green-font {
   color: #104B0B;
 }
+
+.yellow-font-hover {
+  color: #FA990E;
+}
+
+.yellow-font-hover:hover {
+  color: #ffbd61;
+}
+
+.white-font {
+  color: #ffffff;
+}
+
+.button-search {
+  border: none;
+  border-radius: 5px;
+}
