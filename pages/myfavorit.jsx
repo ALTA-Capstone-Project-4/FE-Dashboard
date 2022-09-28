@@ -13,7 +13,7 @@ const MyFavorit = () => {
   return (
     <div>
       <Navbarr />
-      <Row className="gx-0">
+      <Row className="gx-0  min-vh-100">
         <Col lg={4}>
           <div className="sdbr">
             <Sidebar />
