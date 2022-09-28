@@ -8,6 +8,12 @@
   border-radius: 8px;
 }
 
+.buttonloginc {
+  width: 350px;
+  background-color: #104b0b;
+  font-size: 18px;
+  border: #104b0b solid;
+}
 .contenreg h1 {
   font-size: 24px;
   color: #fa990e;
@@ -15,4 +21,19 @@
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 405px) {
+  .contenreg {
+    width: 320px;
+    height: 570px;
+    border: 2px solid #c0c0c0;
+    margin: auto;
+    margin-top: 92px;
+    margin-bottom: 92px;
+    border-radius: 8px;
+  }
+  .buttonloginc {
+    width: 280px;
+  }
 }

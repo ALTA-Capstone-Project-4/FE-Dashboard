@@ -8,6 +8,13 @@
   border-radius: 8px;
 }
 
+.buttonloginm {
+  width: 350px;
+  background-color: #104b0b;
+  font-size: 18px;
+  border: #104b0b solid;
+}
+
 .contenmit h1 {
   font-size: 24px;
   color: #fa990e;
@@ -48,9 +55,54 @@
   margin-top: 50px;
 }
 
+@media (max-width: 729px) {
+  .contenmit {
+    width: 564px;
+    height: auto;
+    border: 2px solid #c0c0c0;
+    margin: auto;
+    margin-top: 92px;
+    margin-bottom: 92px;
+    border-radius: 8px;
+  }
+
+  .boxktp {
+    width: 245px;
+    height: 150px;
+    border: #c0c0c0 solid 2px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .upld {
+    margin: auto;
+    margin-left: 10px;
+  }
+}
+
 @media (max-width: 575px) {
   .contenmit {
     width: 386px;
+    height: 850px;
+    border: 2px solid #c0c0c0;
+    margin: auto;
+    margin-top: 92px;
+    margin-bottom: 92px;
+    border-radius: 8px;
+  }
+  .btnuplod {
+    margin-top: 20px;
+  }
+
+  .upld {
+    margin: auto;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .contenmit {
+    width: 320px;
     height: 850px;
     border: 2px solid #c0c0c0;
     margin: auto;
@@ -62,5 +114,11 @@
   .upld {
     margin: auto;
     margin-left: 10px;
+  }
+
+  .buttonloginm {
+    text-align: center;
+    margin-top: 50px;
+    width: 300px;
   }
 }

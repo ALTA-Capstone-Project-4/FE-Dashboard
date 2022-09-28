@@ -1,9 +1,11 @@
 import React from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import Navbarcom from "../component/navbarcomp";
 
 const RegisterMitra = () => {
   return (
     <div>
+      <Navbarcom />
       <div className="contenmit">
         <h1>YOUR ACCOUNT FOR EVERYTHING WH</h1>
         <Row>
@@ -38,7 +40,7 @@ const RegisterMitra = () => {
 
         <div className="btnreg">
           <div className="text-muted text-center mt-3">By logging in, you agree to WareHouse Privacy Policy and Terms of Use</div>
-          <Button className="buttonlogin mt-2" type="submit">
+          <Button className="buttonloginm mt-2" type="submit">
             Register
           </Button>
           <p className="plog text-center mt-1">
