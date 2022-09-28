@@ -9,6 +9,7 @@ import "../styles/adminverif.css";
 import "../styles/detailmitra.css";
 import "../styles/profilemitra.css";
 import "../styles/myfavorite.css";
+import "../styles/checkout.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
