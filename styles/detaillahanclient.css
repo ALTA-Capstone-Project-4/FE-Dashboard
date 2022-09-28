@@ -1,0 +1,23 @@
+.contenaccor {
+  padding: 30px;
+}
+
+.detpic {
+  width: 250px;
+  height: 250px;
+  border: 2px solid black;
+}
+
+.btnpsnan {
+  background-color: #104b0b;
+  width: 100px;
+  height: 35px;
+  border-radius: 8px;
+  color: white;
+  margin-top: 10px;
+}
+
+.lokgud {
+  border: 2px solid black;
+  height: 100px;
+}
