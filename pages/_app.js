@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/loginstyle.css";
 import "../styles/registerclientstyle.css";

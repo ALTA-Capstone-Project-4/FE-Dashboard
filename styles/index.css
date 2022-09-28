@@ -1,0 +1,78 @@
+.title{
+    color: #FA990E;
+    padding-top: 15px;
+}
+
+.sub-title{
+    padding-top: 20px;
+}
+
+.app-store{
+    padding-top: 30px;
+    width: 386px;
+    height: 60px;
+    align-items: center;
+}
+
+.mitra1, .penitip1, .tanya{
+    margin-top: 30px;
+}
+
+.btn1{
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    background-color: #104B0B;
+    border-radius: 8px;
+    border: #104B0B;
+}
+
+.btn1:hover{
+    color: #fff;
+    background-color: #FA990E;
+    border-radius: 8px;
+    border: #FA990E;
+}
+
+.btn2{
+    width: 110px;
+    height: 40px;
+    color: #fff;
+    background-color: #104B0B;
+    border-radius: 8px;
+    border: #104B0B;
+    float: right;
+}
+
+.btn2:hover{
+    color: #fff;
+    background-color: #FA990E;
+    border-radius: 8px;
+    border: #FA990E;
+}
+
+.tanya{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    padding-bottom: 20px;
+}
+
+.btn3{
+    width: 110px;
+    height: 40px;
+    color: #fff;
+    background-color: #104B0B;
+    border-radius: 8px;
+    border: #104B0B;
+}
+
+.btn3:hover{
+    color: #fff;
+    background-color: #FA990E;
+    border-radius: 8px;
+    border: #FA990E;
+}
