@@ -1,0 +1,31 @@
+.sideb{
+    margin: 50px;
+}
+
+#side_nav {
+    min-width: 330px;
+    max-width: 330px;
+    background-color: #fff;
+    border: 3px solid #104B0B;
+    min-height: 75%;
+    position: fixed;
+    z-index: 1;
+}
+
+.isisidebar {
+    margin: auto;
+    margin-top: 16px;
+}
+  
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #104B0B;
+    display: block;
+}
+  
+.sidebar a:hover {
+    color: #FA990E;
+}
