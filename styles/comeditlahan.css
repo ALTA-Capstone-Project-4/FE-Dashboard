@@ -1,0 +1,36 @@
+.contencomedit {
+  width: 856px;
+  height: 650px;
+}
+
+.contencomedit h1 {
+  color: #104b0b;
+}
+
+.foto {
+  width: 243px;
+  height: 235px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+  margin-top: 60px;
+}
+
+.cr {
+  margin-left: 30px;
+}
+
+.btnedit {
+  background-color: #104b0b;
+  margin-top: 20px;
+  width: 200px;
+  float: right;
+  margin-right: 30px;
+}
+
+@media (max-width: 576px) {
+  .contencomedit {
+    width: 430px;
+    height: 1000px;
+    border: 2px solid black;
+  }
+}
