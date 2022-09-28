@@ -36,6 +36,10 @@ a {
   color: #104B0B;
 }
 
+.green-background {
+  background-color: #104B0B;
+}
+
 .yellow-font-hover {
   color: #FA990E;
 }
@@ -51,4 +55,8 @@ a {
 .button-search {
   border: none;
   border-radius: 5px;
+}
+
+.black-font {
+  color: #000;
 }
