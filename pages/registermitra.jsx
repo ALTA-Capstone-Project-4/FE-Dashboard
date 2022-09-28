@@ -5,7 +5,6 @@ import Navbarcom from "../component/navbarcomp";
 const RegisterMitra = () => {
   return (
     <div>
-      <Navbarcom />
       <div className="contenmit">
         <h1>YOUR ACCOUNT FOR EVERYTHING WH</h1>
         <Row>
@@ -31,7 +30,7 @@ const RegisterMitra = () => {
           </Col>
           <Col sm={6}>
             <div className="upld">
-              <button className="btnuplod">Upload File</button>
+              <button className="btnuplod">Unggah File</button>
               <div className="boxktp"></div>
               <button className="boxplusktp text-center">+</button>
             </div>
@@ -44,7 +43,7 @@ const RegisterMitra = () => {
             Register
           </Button>
           <p className="plog text-center mt-1">
-            Have an Account ? <a href="login">Login</a>
+            Sudah Punya Akun ? <a href="login">Masuk</a>
           </p>
         </div>
       </div>
