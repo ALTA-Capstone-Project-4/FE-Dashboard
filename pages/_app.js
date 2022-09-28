@@ -7,6 +7,7 @@ import "../styles/registermitrastyle.css";
 import "../styles/comeditlahan.css";
 import "../styles/adminverif.css";
 import "../styles/detailmitra.css";
+import "../styles/profilemitra.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

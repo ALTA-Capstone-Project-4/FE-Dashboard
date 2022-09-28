@@ -1,0 +1,37 @@
+.profright {
+  width: 830px;
+  height: auto;
+  border: 2px solid #fa990e;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.btneditmit {
+  width: 120px;
+  height: 30px;
+  background-color: #104b0b;
+  border-radius: 8px;
+  color: white;
+  font: 18px;
+  float: right;
+}
+
+.none {
+  color: white;
+}
+
+.profright2 {
+  width: 830px;
+  height: auto;
+  border: 2px solid #fa990e;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.lokmap {
+  width: 491px;
+  height: 200px;
+  border: 2px solid #104b0b;
+}
