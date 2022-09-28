@@ -1,9 +1,11 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import Navbarcom from "../component/navbarcomp";
 
 const Login = () => {
   return (
     <div>
+      <Navbarcom />
       <div className="conten">
         <h1>YOUR ACCOUNT FOR EVERYTHING WH</h1>
 

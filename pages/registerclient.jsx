@@ -1,9 +1,11 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import Navbarcom from "../component/navbarcomp";
 
 const RegisterClient = () => {
   return (
     <div>
+      <Navbarcom />
       <div className="contenreg">
         <h1>YOUR ACCOUNT FOR EVERYTHING WH</h1>
 
@@ -26,7 +28,7 @@ const RegisterClient = () => {
             <div className="text-muted text-center byloging mt-3">By logging in, you agree to WareHouse Privacy Policy and Terms of Use</div>
           </Form.Group>
 
-          <Button className="buttonlogin mt-2" type="submit">
+          <Button className="buttonloginc mt-2" type="submit">
             Register
           </Button>
         </Form>

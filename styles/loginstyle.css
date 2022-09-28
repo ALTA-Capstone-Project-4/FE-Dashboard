@@ -33,3 +33,18 @@
   text-decoration: none;
   color: #fa990e;
 }
+
+@media (max-width: 405px) {
+  .conten {
+    width: 320px;
+    height: 570px;
+    border: 2px solid #c0c0c0;
+    margin: auto;
+    margin-top: 92px;
+    margin-bottom: 92px;
+    border-radius: 8px;
+  }
+  .buttonlogin {
+    width: 280px;
+  }
+}
