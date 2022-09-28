@@ -1,0 +1,15 @@
+.tambah {
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    background-color: #104B0B;
+    border-radius: 8px;
+    border: #104B0B;
+}
+
+.tambah:hover{
+    color: #fff;
+    background-color: #FA990E;
+    border-radius: 8px;
+    border: #FA990E;
+}
