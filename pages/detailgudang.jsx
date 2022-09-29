@@ -17,7 +17,7 @@ const detailgudang = () => {
             <Col lg={8}>
                 <Container>
                     <div>
-                        <h1>Gudang Saya</h1>
+                        <h1 className="favoritsaya">Gudang Saya</h1>
                     </div>
                     <div>
                         <Accordion defaultActiveKey="0">
