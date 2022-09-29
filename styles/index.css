@@ -1,3 +1,11 @@
+.land{
+    margin: 150px 0px;
+}
+
+.selm{
+    height: 500px;
+}
+
 .title{
     color: #FA990E;
     padding-top: 15px;
@@ -75,4 +83,64 @@
     background-color: #FA990E;
     border-radius: 8px;
     border: #FA990E;
+}
+
+@media (max-width: 952px) {
+    .welc img{
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .land{
+        margin-top: 100px;
+    }
+    .selm{
+        height: 300px;
+    }
+    .app-store{
+        width: 70%;
+    }
+    .welc img{
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+    .sub-title{
+        padding-top: 0px;
+    }
+    .text-center{
+        margin-top: 50px;
+    }
+    .divpen{
+        margin-top: 50px;
+    }
+    .text-center{
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 420px) {
+    .land{
+        margin-top: 100px;
+    }
+    .selm{
+        height: 400px;
+    }
+    .app-store{
+        width: 70%;
+    }
+    .welc img{
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+    .sub-title{
+        padding-top: 0px;
+    }
+    .text-center{
+        margin-top: 50px;
+    }
 }
