@@ -8,6 +8,7 @@ const detailgudang = () => {
   return (
     <div>
         <NavbarComp />
+        <Container>
         <Row className="gx-0  min-vh-100 cont">
             <Col lg={4}>
                 <div className="sdbr">
@@ -15,7 +16,6 @@ const detailgudang = () => {
                 </div>
             </Col>
             <Col lg={8}>
-                <Container>
                     <div>
                         <h1 className="favoritsaya">Gudang Saya</h1>
                     </div>
@@ -66,7 +66,7 @@ const detailgudang = () => {
                                         <h5 className='text-center mt-3'>Rp. 1.000.000/bulan</h5>
                                     </Col>
                                 </Row>
-                                <Row>
+                                <Row className='mt-4'>
                                     <Col lg={4}>
                                         <img className="imgdetailsewa" />
                                     </Col>
@@ -127,7 +127,7 @@ const detailgudang = () => {
                                         <h5 className='text-center mt-3'>Rp. 1.000.000/bulan</h5>
                                     </Col>
                                 </Row>
-                                <Row>
+                                <Row className='mt-4'>
                                     <Col lg={4}>
                                         <img className="imgdetailsewa" />
                                     </Col>
@@ -188,7 +188,7 @@ const detailgudang = () => {
                                         <h5 className='text-center mt-3'>Rp. 1.000.000/bulan</h5>
                                     </Col>
                                 </Row>
-                                <Row>
+                                <Row className='mt-4'>
                                     <Col lg={4}>
                                         <img className="imgdetailsewa" />
                                     </Col>
@@ -206,9 +206,9 @@ const detailgudang = () => {
                         </Accordion.Item>
                         </Accordion>
                     </div>
-                </Container>
             </Col>
         </Row>
+        </Container>
 
         <Footer />
     </div>
