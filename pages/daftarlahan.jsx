@@ -27,41 +27,10 @@ const DaftarLahan = () => {
                 <img className="gambarfav" />
                 <p className="txtmf">Lahan 2x2M</p>
                 <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">
-                  Pesan Sekarang
-                </button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
-              </div>
-            </Col>
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">Pesan Sekarang</button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
-              </div>
-            </Col>
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">Pesan Sekarang</button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
-              </div>
-            </Col>
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">Pesan Sekarang</button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
+                <div className='btndf'>
+                <button className="btnpsndf">Edit</button>
+                <button className="btnpsndf2">Hapus</button>
+                </div>
               </div>
             </Col>
           </Row>
