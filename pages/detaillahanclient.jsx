@@ -1,7 +1,7 @@
 import React from "react";
 import Navbarr from "../component/navbarcomp";
 import { Accordion, Row, Col } from "react-bootstrap";
-import Home from "../component/map";
+import Home from "../component/mapgoogle";
 
 const DetailLahanClient = () => {
   return (
