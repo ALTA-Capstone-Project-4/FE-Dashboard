@@ -1,5 +1,5 @@
 .cont{
-    margin: 100px 0;
+    margin: 150px 0;
 }
 
 .imgdetailgd{
@@ -23,11 +23,22 @@
     color: #104B0B;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 952px) {
+    .text-center{
+        float: left;
+    }
     .imgdetailgd{
-        height: 100px;
+        height: 150px;
+        width: 50%;
     }
     .imgdetailsewa{
-        height: 100px;
+        height: 150px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 730px) {
+    .imgdetailgd{
+        width: 100%;
     }
 }
