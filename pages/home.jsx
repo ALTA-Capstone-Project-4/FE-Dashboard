@@ -9,7 +9,7 @@ const Home = () => {
       <NavbarComp />
 
       <div
-        className="container-fluid d-flex justify-content-center align-items-center"
+        className="container-fluid d-flex justify-content-center align-items-center after-navbar"
         style={{
           backgroundImage: `url("https://img.freepik.com/free-vector/warehouse-interior-with-cardboard-boxes-racks_107791-1633.jpg?w=900&t=st=1664356525~exp=1664357125~hmac=1e2dfd478aed1381c9a78ec845956ab0d61b1092ff92ef8d747e9ff37ea3070e")`,
           height: "23rem",
@@ -30,7 +30,7 @@ const Home = () => {
                 aria-label="Input group example"
                 aria-describedby="btnGroupAddon"
               />
-              <button className=" yellow-background white-font button-search px-4 py-1 fw-bold">
+              <button className=" yellow-background-hover white-font button-search px-4 py-1 fw-bold">
                 Cari
               </button>
             </InputGroup>

@@ -7,7 +7,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 function NavbarComp() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="shadow-sm p-3 mb-5 bg-body rounded fw-semibold ">
+      <Navbar collapseOnSelect expand="lg" className="shadow-sm p-3  bg-body rounded fw-semibold fixed-top">
       <Container className="px-0">
         <Navbar.Brand href="#home"><p className="yellow-font"><span className='green-font'>WARE</span>HOUSE</p></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
