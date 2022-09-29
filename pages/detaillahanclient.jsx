@@ -1,6 +1,7 @@
 import React from "react";
 import Navbarr from "../component/navbarcomp";
 import { Accordion, Row, Col } from "react-bootstrap";
+import Home from "../component/map";
 
 const DetailLahanClient = () => {
   return (
@@ -50,22 +51,30 @@ const DetailLahanClient = () => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <div>
-          <h5 className="mt-5">Lokasi :</h5>
-          <div className="lokgud"></div>
-        </div>
-        <div>
-          <Row>
-            <Col>
-              <h5 className="mt-5">Nama Mitra :</h5>
-            </Col>
-            <Col>
-              <div className="mt-5">
-                <button className="btnpsnan">Whatsapp</button>
+        <Row>
+          <Col lg={6}>
+            <div>
+              <h5 className="mt-5">Lokasi :</h5>
+              <div className="lokgud">
+                <Home />
               </div>
-            </Col>
-          </Row>
-        </div>
+            </div>
+          </Col>
+          <Col lg={6}>
+            <div>
+              <Row>
+                <Col>
+                  <h5 className="mt-5">Nama Mitra :</h5>
+                </Col>
+                <Col>
+                  <div className="mt-5">
+                    <button className="btnpsnan">Whatsapp</button>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+        </Row>
       </div>
     </div>
   );
