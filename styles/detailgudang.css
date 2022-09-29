@@ -4,7 +4,7 @@
 
 .imgdetailgd{
     width: 100%;
-    height: 50%;
+    height: 100%;
     border: 1px solid #000;
 }
 
@@ -17,4 +17,8 @@
     width: 100%;
     height: 100%;
     border: 1px solid #000;
+}
+
+.favoritsaya{
+    color: #104B0B;
 }

@@ -9,12 +9,12 @@ const DaftarLahan = () => {
     <div>
         <NavbarComp />
       <Row className="gx-0  min-vh-100">
-        <Col lg={4}>
+        <Col md={4} lg={4}>
           <div className="sdbr">
             <Sidebar />
           </div>
         </Col>
-        <Col lg={8}>
+        <Col md={8} lg={8}>
             <div>
                 <h3 className="favoritsaya">Daftar lahan</h3>
             </div>
