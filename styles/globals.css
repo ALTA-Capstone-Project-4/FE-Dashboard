@@ -32,6 +32,14 @@ a {
   background-color: #FA990E;
 }
 
+.yellow-background-hover {
+  background-color: #FA990E;
+}
+
+.yellow-background-hover:hover {
+  background-color: #ffbd61;
+}
+
 .green-font {
   color: #104B0B;
 }
@@ -59,4 +67,8 @@ a {
 
 .black-font {
   color: #000;
+}
+
+.after-navbar {
+  margin-top: 8rem !important;
 }

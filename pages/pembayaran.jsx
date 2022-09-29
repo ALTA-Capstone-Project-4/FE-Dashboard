@@ -5,7 +5,7 @@ const Pembayaran = () => {
   return (
     <div>
         <NavbarComp/>
-        <div className="container pb-5">
+        <div className="container pb-5 after-navbar ">
             <p className="text-center green-font fs-2 fw-bold pb-4">Pembayaran</p>
             <div style={{ borderWidth: '2px', borderStyle: 'solid', borderRadius: '5px'}} className="yellow-font p-5">
                 <div className="black-font">
