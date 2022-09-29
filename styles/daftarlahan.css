@@ -1,3 +1,9 @@
+.new{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
 .tambah {
     width: 150px;
     height: 40px;
@@ -8,6 +14,26 @@
 }
 
 .tambah:hover{
+    color: #fff;
+    background-color: #FA990E;
+    border-radius: 8px;
+    border: #FA990E;
+}
+
+.btndf{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnpsndf, .btnpsndf2{
+    width: 40%;
+    color: #fff;
+    background-color: #104B0B;
+    border-radius: 8px;
+    border: #104B0B;
+}
+
+.btnpsndf:hover, .btnpsndf2:hover{
     color: #fff;
     background-color: #FA990E;
     border-radius: 8px;

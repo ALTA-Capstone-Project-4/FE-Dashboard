@@ -1,0 +1,20 @@
+.cont{
+    margin-bottom: 100px;
+}
+
+.imgdetailgd{
+    width: 100%;
+    height: 50%;
+    border: 1px solid #000;
+}
+
+.listli, .listli2{
+    list-style: none;
+    padding-left: 0;
+}
+
+.imgdetailsewa{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+}
