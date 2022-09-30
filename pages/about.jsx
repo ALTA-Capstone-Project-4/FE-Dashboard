@@ -11,7 +11,7 @@ const about = () => {
         <div>
             <NavbarComp />
         </div>
-        <Container>
+        <Container className='about'>
             <Image src={imgabout} />
             <div style={{ height: "650px"}}>
                 <h1 className='title text-center'>Tentang Kami</h1>
