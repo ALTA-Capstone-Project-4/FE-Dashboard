@@ -9,14 +9,14 @@ const editlahan = () => {
   return (
     <div>
         <NavbarComp />
-        <Row className="gx-0 min-vh-100">
+        <Row className="gx-0 min-vh-100 addlahan">
             <Col lg={4}>
                 <div className='sdbr'>
                     <Sidebar />
                 </div>
             </Col>
             <Col lg={8}>
-                <ComEditLahan />
+                <ComEditLahan className='comedit' />
             </Col>
         </Row>
 
