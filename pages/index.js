@@ -6,8 +6,27 @@ import store from "../image/app-store.png";
 import imgmitra from "../image/6159988.jpg";
 import imgpenitip from "../image/6160010.jpg";
 import { Accordion, Container, Col, Row } from 'react-bootstrap';
+import Router from 'next/router';
 
 const index = () => {
+  const registermitra = () => {
+    Router.push({
+      pathname: "/registermitra",
+    });
+  };
+
+  const registerclient = () => {
+    Router.push({
+      pathname: "/registerclient",
+    });
+  };
+
+  const about = () => {
+    Router.push({
+      pathname: "/about",
+    });
+  };
+
   return (
     <div className='min-vh-100'>
       <NavbarComp/>
@@ -35,7 +54,7 @@ const index = () => {
               <h1 className='title'>Jadi Mitra</h1>
               <h4 className='sub-title'>Sebagai Mitra, cukup posting tempat penitipan dan berikan deskripsi tempat penitipan.</h4>
               <div className='mitra1'>
-                <button className='btn1'>Jadi Mitra</button>
+                <button type="button" className='btn1' onClick={registermitra}>Jadi Mitra</button>
               </div>
             </Col>
           </Row>
@@ -46,7 +65,7 @@ const index = () => {
             <h1 className='title text-end'>Titipkan Barangmu!</h1>
             <h4 className='sub-title text-end'>Mulai titipkan barangmu, nikmati fitur menarik yang tersedia di Warehouse kami!</h4>
             <div className='penitip1'>
-            <button className='btn2'>Jadi Penitip</button>
+            <button type='button' className='btn2' onClick={registerclient}>Jadi Penitip</button>
             </div>
             </Col>
             <Col sm="4">
@@ -82,7 +101,7 @@ const index = () => {
           </Accordion>
           </div>
           <div className='tanya'>
-          <button className='btn3'>Tanya Kami</button>
+          <button type='button' className='btn3' onClick={about}>Tanya Kami</button>
           </div>
         </div>
       </Container>
