@@ -9,13 +9,13 @@ const Sidebar = () => {
         </div>
         <div className="isisidebar">
           <div>
-            <a href="/profilemitra">Akun Saya</a>
+            <a href="/profilmitra">Akun Saya</a>
           </div>
           <div>
-            <a href="/listlahan">Daftar Lahan</a>
+            <a href="/daftarlahan">Daftar Lahan</a>
           </div>
           <div>
-            <a href="/tambahlahan">Tambah Lahan</a>
+            <a href="/detailgudang">Gudang Saya</a>
           </div>
         </div>
       </nav>
