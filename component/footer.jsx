@@ -17,8 +17,8 @@ function Footer() {
                 <p>Lokasi: Jalan Dr. Soetomo 28 Metro Utara, Metro, Lampung</p>
                 </div>
             </div>
-            <div className='col mt-2'>
-                <div className='px-4 text-center'>
+            <div className='col mt-2 text-center'>
+                <div>
                 <p>Social Media</p>
                 <FontAwesomeIcon icon={faFacebookSquare} size="2x" className='px-2'/>
                 <FontAwesomeIcon icon={faTwitter} size="2x" className='px-2'/>
