@@ -7,7 +7,7 @@ const Checkout = () => {
   return (
     <div>
       <Navbarr />
-      <h3 className="favoritsaya">Transaksi</h3>
+      <h3 className="favoritsaya marginnav">Transaksi</h3>
       <Row className="gx-0">
         <Col lg={4} className="mb-4">
           <div className="checkl">

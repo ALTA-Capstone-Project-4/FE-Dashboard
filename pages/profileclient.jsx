@@ -43,18 +43,20 @@ const ProfileClient = () => {
           </div>
         </Col>
         <Col lg={8}>
-          <div className="profcr mt-5">
-            <h3>Akun Saya</h3>
-            <p>Email: Teguh@gmail.com</p>
-            <p>Nama: Teguh</p>
-            <p>Alamat : Jln.Teguh</p>
-            <p>No.Handphone</p>
+          <div className="setmar">
+            <div className="profcr">
+              <h3>Akun Saya</h3>
+              <p>Email: Teguh@gmail.com</p>
+              <p>Nama: Teguh</p>
+              <p>Alamat : Jln.Teguh</p>
+              <p>No.Handphone</p>
 
-            <button className="btneditmit" onClick={() => setModalShow(true)}>
-              Edit
-            </button>
-            <EditProfile show={modalShow} onHide={() => setModalShow(false)} />
-            <span className="none">.</span>
+              <button className="btneditmit" onClick={() => setModalShow(true)}>
+                Edit
+              </button>
+              <EditProfile show={modalShow} onHide={() => setModalShow(false)} />
+              <span className="none">.</span>
+            </div>
           </div>
         </Col>
       </Row>

@@ -7,7 +7,7 @@ const DetailLahanClient = () => {
   return (
     <div>
       <Navbarr />
-      <h3 className="text-center">Nama Gudang</h3>
+      <h3 className="text-center marginnav">Nama Gudang</h3>
       <div className="contenaccor">
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">

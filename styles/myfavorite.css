@@ -41,6 +41,11 @@ p {
   margin-bottom: 80px;
 }
 
+.sdbr {
+  margin-left: 80px;
+  margin-top: 130px;
+}
+
 @media (max-width: 991px) {
   .sdbr {
     margin: 0px auto;

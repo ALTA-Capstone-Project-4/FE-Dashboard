@@ -126,7 +126,7 @@
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 40px;
-    margin-left: 25px;
+    margin-left: 15px;
   }
   .profright2 {
     width: 380px;
@@ -135,7 +135,7 @@
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 40px;
-    margin-left: 25px;
+    margin-left: 15px;
   }
 
   .btneditmit {
@@ -159,24 +159,24 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .profright {
-    width: 365px;
+    width: 345px;
     height: auto;
     border: 2px solid #fa990e;
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 40px;
-    margin-left: 25px;
+    margin-left: 15px;
   }
   .profright2 {
-    width: 365px;
+    width: 345px;
     height: auto;
     border: 2px solid #fa990e;
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 40px;
-    margin-left: 25px;
+    margin-left: 5px;
   }
 
   .btneditmit {
@@ -195,6 +195,88 @@
 
   .lokmap {
     width: 300px;
+    height: 200px;
+    border: 2px solid #104b0b;
+  }
+}
+
+@media (max-width: 425px) {
+  .profright {
+    width: 345px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 15px;
+  }
+  .profright2 {
+    width: 345px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 5px;
+  }
+
+  .btneditmit {
+    width: 120px;
+    height: 30px;
+    background-color: #104b0b;
+    border-radius: 8px;
+    color: white;
+    font: 18px;
+    float: right;
+  }
+
+  .none {
+    color: white;
+  }
+
+  .lokmap {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #104b0b;
+  }
+}
+
+@media (max-width: 320px) {
+  .profright {
+    width: 300px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+  }
+  .profright2 {
+    width: 300px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+  }
+
+  .btneditmit {
+    width: 120px;
+    height: 30px;
+    background-color: #104b0b;
+    border-radius: 8px;
+    color: white;
+    font: 18px;
+    float: right;
+  }
+
+  .none {
+    color: white;
+  }
+
+  .lokmap {
+    width: 240px;
     height: 200px;
     border: 2px solid #104b0b;
   }
