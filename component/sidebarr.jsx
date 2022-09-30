@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const sidebarr = () => {
   return (
@@ -9,7 +9,7 @@ const sidebarr = () => {
         </div>
         <div className="isisidebar">
           <div>
-            <a href="/profilecitra">Akun Saya</a>
+            <a href="/profileclient">Akun Saya</a>
           </div>
           <div>
             <a href="/myfavorit">Favorit Saya</a>
@@ -20,7 +20,7 @@ const sidebarr = () => {
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
 export default sidebarr;
