@@ -2,7 +2,6 @@ import React from 'react';
 import NavbarComp from "../component/navbarcomp";
 import Footer from "../component/footer";
 import Image from "next/image";
-import welcome from "../image/6159984.jpg";
 import store from "../image/app-store.png";
 import imgmitra from "../image/6159988.jpg";
 import imgpenitip from "../image/6160010.jpg";
@@ -12,22 +11,22 @@ const index = () => {
   return (
     <div className='min-vh-100'>
       <NavbarComp/>
-      <Container>
-        <div style={{ height: "500px"}}>
+      <Container className='land'>
+        <div className='selm'>
           <Row>
             <Col sm="6">
               <h1 className='title'>Selamat datang di Warehouse</h1>
               <h4 className='sub-title'>Warehouse App merupakan aplikasi penyedia jasa penitipan barang. Semua barang bisa dititipkan lewat Warehouse App, dari yang paling kecil sampai yang paling besar.</h4>
               <div className='app-store'>
-              <Image src={store} />
+                <Image src={store} />
               </div>
             </Col>
-            <Col sm="6">
-              <Image src={welcome} width="552px" height="368px" />
+            <Col sm="6" className='welc' >
+              <img src="https://img.freepik.com/free-vector/hand-drawn-delivery-concept_23-2149149266.jpg?w=740&t=st=1664476571~exp=1664477171~hmac=c37bab70a95e7c490cf4be03adfdd76bc3304dc1668067906efc01cd3368ca28" alt='' />
             </Col>
           </Row>
         </div>
-        <div style={{ height: "500px"}}>
+        <div className='selm'>
           <Row>
             <Col sm="6">
               <Image src={imgmitra} width="450px" height="350px" />
@@ -41,7 +40,7 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div style={{ height: "500px"}}>
+        <div className='divpen'>
           <Row>
             <Col sm="8">
             <h1 className='title text-end'>Titipkan Barangmu!</h1>
@@ -51,12 +50,15 @@ const index = () => {
             </div>
             </Col>
             <Col sm="4">
-              <Image src={imgpenitip} width="342px" height="342px" />
+              <Image src={imgpenitip} width="342px" height="342px" className='imgpen' />
             </Col>
           </Row>
         </div>
-        <div style={{ height: "500px"}}>
+        <div className='accor'>
+          <div>
           <h1 className='title text-center'>Tentang Kami</h1>
+          </div>
+          <div>
           <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0">
               <Accordion.Header>Apa itu Warehouse?</Accordion.Header>
@@ -78,6 +80,7 @@ const index = () => {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+          </div>
           <div className='tanya'>
           <button className='btn3'>Tanya Kami</button>
           </div>

@@ -1,5 +1,5 @@
 .cont{
-    margin-bottom: 100px;
+    margin: 150px 0;
 }
 
 .imgdetailgd{
@@ -17,4 +17,28 @@
     width: 100%;
     height: 100%;
     border: 1px solid #000;
+}
+
+.favoritsaya{
+    color: #104B0B;
+}
+
+@media (max-width: 952px) {
+    .text-center{
+        float: left;
+    }
+    .imgdetailgd{
+        height: 150px;
+        width: 50%;
+    }
+    .imgdetailsewa{
+        height: 150px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 730px) {
+    .imgdetailgd{
+        width: 100%;
+    }
 }

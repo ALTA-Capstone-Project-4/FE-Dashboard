@@ -1,14 +1,12 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React from 'react';
+
 
 const Sidebar = () => {
   return (
-    <div className="sideb">
+    <div className="sideb mb-5">
       <nav className="sidebar navbar navbar-expand d-flex flex-column justify-content-left" id="side_nav">
         <div>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" alt="" style={{ height: "250px" }} className="sideimg" />
-          </Card>
+          <img className="gambarfav" />
         </div>
         <div className="isisidebar">
           <div>
@@ -18,7 +16,7 @@ const Sidebar = () => {
             <a href="/daftarlahan">Daftar Lahan</a>
           </div>
           <div>
-            <a href="/addlahan">Tambah Lahan</a>
+            <a href="/detailgudang">Gudang Saya</a>
           </div>
         </div>
       </nav>

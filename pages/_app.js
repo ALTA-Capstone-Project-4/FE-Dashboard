@@ -15,6 +15,7 @@ import "../styles/detaillahanclient.css";
 import "../styles/profileclient.css";
 import "../styles/daftarlahan.css";
 import "../styles/detailgudang.css";
+import "../styles/about.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
