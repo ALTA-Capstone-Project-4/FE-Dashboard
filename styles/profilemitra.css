@@ -35,3 +35,167 @@
   height: 200px;
   border: 2px solid #104b0b;
 }
+
+@media (max-width: 1256px) {
+  .profright {
+    width: 600px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 55px;
+  }
+  .profright2 {
+    width: 600px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 55px;
+  }
+
+  .btneditmit {
+    width: 120px;
+    height: 30px;
+    background-color: #104b0b;
+    border-radius: 8px;
+    color: white;
+    font: 18px;
+    float: right;
+  }
+
+  .none {
+    color: white;
+  }
+
+  .lokmap {
+    width: 491px;
+    height: 200px;
+    border: 2px solid #104b0b;
+  }
+}
+
+@media (max-width: 991px) {
+  .profright {
+    width: 680px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+  .profright2 {
+    width: 680px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+
+  .btneditmit {
+    width: 120px;
+    height: 30px;
+    background-color: #104b0b;
+    border-radius: 8px;
+    color: white;
+    font: 18px;
+    float: right;
+  }
+
+  .none {
+    color: white;
+  }
+
+  .lokmap {
+    width: 491px;
+    height: 200px;
+    border: 2px solid #104b0b;
+  }
+}
+
+@media (max-width: 746px) {
+  .profright {
+    width: 380px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+  }
+  .profright2 {
+    width: 380px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+  }
+
+  .btneditmit {
+    width: 120px;
+    height: 30px;
+    background-color: #104b0b;
+    border-radius: 8px;
+    color: white;
+    font: 18px;
+    float: right;
+  }
+
+  .none {
+    color: white;
+  }
+
+  .lokmap {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #104b0b;
+  }
+}
+
+@media (max-width: 375px) {
+  .profright {
+    width: 365px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+  }
+  .profright2 {
+    width: 365px;
+    height: auto;
+    border: 2px solid #fa990e;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+  }
+
+  .btneditmit {
+    width: 120px;
+    height: 30px;
+    background-color: #104b0b;
+    border-radius: 8px;
+    color: white;
+    font: 18px;
+    float: right;
+  }
+
+  .none {
+    color: white;
+  }
+
+  .lokmap {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #104b0b;
+  }
+}

@@ -38,7 +38,7 @@ const ProfileClient = () => {
       <Navbarr />
       <Row className="min-vh-100 gx-0">
         <Col lg={4}>
-          <div>
+          <div className="sdbr">
             <Sidebar />
           </div>
         </Col>
