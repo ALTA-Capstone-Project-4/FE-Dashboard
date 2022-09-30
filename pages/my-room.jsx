@@ -1,6 +1,6 @@
 import NavbarComp from "../component/navbarcomp"
 import Footer from "../component/footer"
-import Sidebar from "../component/sidebar"
+import Sidebarr from "../component/sidebarr"
 
 
 const MyRoom = () => {
@@ -8,8 +8,8 @@ const MyRoom = () => {
     <div>
         <NavbarComp/>
         <div className="container-fluid row d-flex after-navbar">
-        <div className="col-xl-4 ">
-            <Sidebar/>
+        <div className="col-xl-4">
+            <Sidebarr/>
         </div>
         <div className="col-xl-8">
         <p className="green-font fs-2 fw-bold pb-4">Daftar Lahan</p>
