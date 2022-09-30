@@ -8,7 +8,6 @@ const detailgudang = () => {
   return (
     <div>
         <NavbarComp />
-        <Container>
         <Row className="gx-0  min-vh-100 cont">
             <Col lg={4}>
                 <div className="sdbr">
@@ -16,10 +15,11 @@ const detailgudang = () => {
                 </div>
             </Col>
             <Col lg={8}>
-                <div>
+                <Container>
+                <div className='tainer'>
                     <h1 className="favoritsaya">Gudang Saya</h1>
                 </div>
-                <div>
+                <div className='tainer'>
                     <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header><h4>Lahan 1</h4></Accordion.Header>
@@ -206,9 +206,9 @@ const detailgudang = () => {
                     </Accordion.Item>
                     </Accordion>
                 </div>
+                </Container>
             </Col>
         </Row>
-        </Container>
 
         <Footer />
     </div>
