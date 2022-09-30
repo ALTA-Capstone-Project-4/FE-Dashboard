@@ -25,7 +25,7 @@ const Home = () => {
           <div className="container">
             <InputGroup>
               <Form.Control
-                type="text"
+                type="text" 
                 placeholder="Cari.."
                 aria-label="Input group example"
                 aria-describedby="btnGroupAddon"
@@ -61,7 +61,7 @@ const Home = () => {
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  the bulk of the card content.
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>

@@ -49,7 +49,7 @@ a {
 }
 
 .yellow-font-hover {
-  color: #FA990E;
+  color: #FA990E !important;
 }
 
 .yellow-font-hover:hover {
