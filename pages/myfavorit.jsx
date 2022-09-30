@@ -3,7 +3,7 @@ import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 import { Row, Col } from "react-bootstrap";
 import Router from "next/router";
-import Sidebar from "../component/sidebar";
+import Sidebarr from "../component/sidebarr";
 
 const MyFavorit = () => {
   const goCheckout = () => {
@@ -16,7 +16,7 @@ const MyFavorit = () => {
       <Row className="gx-0  min-vh-100">
         <Col lg={4}>
           <div className="sdbr">
-            <Sidebar />
+            <Sidebarr />
           </div>
         </Col>
         <Col lg={8}>

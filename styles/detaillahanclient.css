@@ -1,28 +1,44 @@
-.contenaccor {
-  padding: 30px;
+.wrpctn {
+  margin: 30px;
+  margin-top: 120px;
 }
 
-.detpic {
-  width: 250px;
-  height: 250px;
-  border: 2px solid black;
-}
-
-.btnpsnan {
+.btnwsp {
   background-color: #104b0b;
-  width: 100px;
-  height: 35px;
-  border-radius: 8px;
   color: white;
-  margin-top: 10px;
+  border-radius: 8px;
+  width: 100px;
 }
 
 .lokgud {
   border: 2px solid black;
-  height: 400px;
+  height: 300px;
 }
 
 .map-container {
   width: 100%;
-  height: 400px;
+  height: 300px;
+}
+
+.crdlhn {
+  margin-top: 20px;
+  width: 270px;
+  height: auto;
+}
+
+.imglhn {
+  border: 1px solid black;
+  width: 270px;
+  height: 270px;
+  margin-bottom: 10px;
+}
+
+.btnnpsn {
+  width: 100%;
+  background-color: #104b0b;
+  color: white;
+}
+
+.mcj {
+  text-align: center;
 }
