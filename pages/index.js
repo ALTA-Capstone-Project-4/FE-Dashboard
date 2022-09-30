@@ -22,11 +22,11 @@ const index = () => {
               </div>
             </Col>
             <Col sm="6" className='welc' >
-              <img src="https://img.freepik.com/free-vector/hand-drawn-delivery-concept_23-2149149266.jpg?w=740&t=st=1664476571~exp=1664477171~hmac=c37bab70a95e7c490cf4be03adfdd76bc3304dc1668067906efc01cd3368ca28" width="552px" height="368px" alt='' />
+              <img src="https://img.freepik.com/free-vector/hand-drawn-delivery-concept_23-2149149266.jpg?w=740&t=st=1664476571~exp=1664477171~hmac=c37bab70a95e7c490cf4be03adfdd76bc3304dc1668067906efc01cd3368ca28" alt='' />
             </Col>
           </Row>
         </div>
-        <div style={{ height: "500px"}}>
+        <div className='selm'>
           <Row>
             <Col sm="6">
               <Image src={imgmitra} width="450px" height="350px" />
@@ -40,7 +40,7 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div style={{ height: "500px"}} className='divpen'>
+        <div className='divpen'>
           <Row>
             <Col sm="8">
             <h1 className='title text-end'>Titipkan Barangmu!</h1>
@@ -54,7 +54,7 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div style={{ height: "500px"}}>
+        <div className='accor'>
           <div>
           <h1 className='title text-center'>Tentang Kami</h1>
           </div>
