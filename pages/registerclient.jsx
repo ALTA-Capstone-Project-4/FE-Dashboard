@@ -38,7 +38,6 @@ const RegisterClient = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -64,7 +64,9 @@ const ProfilMitra = () => {
       <Navbar />
       <Row className="gx-0">
         <Col lg={4}>
-          <Sidebar />
+          <div className="sdbr">
+            <Sidebar />
+          </div>
         </Col>
         <Col lg={4} className="mt-5">
           <div className="profright">
@@ -85,7 +87,7 @@ const ProfilMitra = () => {
             <p>Alamat : Jln.Teguh</p>
             <p>Lokasi Gudang :</p>
             <div className="lokmap"></div>
-            <button className="btneditmit" onClick={() => setModalShoww(true)}>
+            <button className="btneditmit mt-2" onClick={() => setModalShoww(true)}>
               Edit
             </button>
             <EditProfile show={modalShoww} onHide={() => setModalShoww(false)} />
