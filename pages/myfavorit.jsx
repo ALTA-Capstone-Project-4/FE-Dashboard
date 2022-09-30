@@ -20,7 +20,7 @@ const MyFavorit = () => {
           </div>
         </Col>
         <Col lg={8}>
-          <h3 className="favoritsaya">Favorit Saya</h3>
+          <h3 className="favoritsaya marginnav">Favorit Saya</h3>
           <Row className="contenmyfav">
             <Col>
               <div className="cardfav">

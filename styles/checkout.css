@@ -53,6 +53,10 @@
   }
 }
 
+.marginnav {
+  margin-top: 120px;
+}
+
 @media (max-width: 1098px) {
   .checkl {
     margin-left: 60px;
