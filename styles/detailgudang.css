@@ -32,11 +32,11 @@
         float: left;
     }
     .imgdetailgd{
-        height: 150px;
+        height: 200px;
         width: 50%;
     }
     .imgdetailsewa{
-        height: 150px;
+        height: 200px;
         width: 100%;
     }
     .tainer{
@@ -44,14 +44,23 @@
     }
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 767px) {
     .imgdetailgd{
-        width: 100%;
+        width: 50%;
+    }
+    .imgdetailsewa{
+        width: 50%;
     }
 }
 
 @media only screen and (max-width: 425px) {
     .tainer{
         margin-right: 0px;
+    }
+    .imgdetailgd{
+        width: 100%;
+    }
+    .imgdetailsewa{
+        width: 100%;
     }
 }
