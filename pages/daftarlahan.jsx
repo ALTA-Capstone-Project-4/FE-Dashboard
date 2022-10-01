@@ -3,12 +3,19 @@ import { Col, Row } from 'react-bootstrap';
 import NavbarComp from '../component/navbarcomp';
 import Sidebar from '../component/sidebar';
 import Footer from '../component/footer';
+import Router from 'next/router';
 
 const DaftarLahan = () => {
+  const tambahlahan = () => {
+    Router.push({
+      pathname: "/addlahan",
+    });
+  };
+
   return (
     <div>
         <NavbarComp />
-      <Row className="gx-0  min-vh-100">
+      <Row className="gx-0  min-vh-100 dflahan">
         <Col md={4} lg={4}>
           <div className="sdbr">
             <Sidebar />
@@ -19,7 +26,7 @@ const DaftarLahan = () => {
                 <h3 className="favoritsaya">Daftar lahan</h3>
             </div>
             <div className='new'>
-                <button className="tambah mb-4">Tambah Baru</button>
+                <button type='button' className="tambah mb-4" onClick={tambahlahan}>Tambah Baru</button>
             </div>
           <Row className="contenmyfav">
             <Col>
