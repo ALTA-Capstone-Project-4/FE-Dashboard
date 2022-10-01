@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Navbarcom from "../component/navbarcomp";
-import Footer from "../component/footer";
+import Router from "next/router";
 
 const RegisterClient = () => {
   const [name, setName] = useState("");
@@ -34,6 +33,7 @@ const RegisterClient = () => {
     axios(config)
       .then(function (response) {
         alert("daftar berhasil");
+        Router.push("/login");
       })
       .catch(function (error) {
         console.log(error);
