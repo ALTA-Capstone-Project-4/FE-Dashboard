@@ -13,6 +13,10 @@
   background-color: #104b0b;
   font-size: 18px;
   border: #104b0b solid;
+  border-radius: 8px;
+  margin: 0px auto;
+  float: none;
+  display: table;
 }
 .contenreg h1 {
   font-size: 24px;
@@ -21,6 +25,12 @@
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
+}
+
+.txtoren {
+  color: #fa990e;
+  text-decoration: none;
+  margin-left: 3px;
 }
 
 @media (max-width: 405px) {
