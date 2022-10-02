@@ -1,7 +1,9 @@
-import useState from "react";
+
+import React, { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
-import { setCookie } from "cookies-next";
 import Router from "next/router";
+import axios from "axios";
+
 
 const RegisterMitra = () => {
   const [name, setName] = useState("");
@@ -9,43 +11,29 @@ const RegisterMitra = () => {
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [file_ktp, setFile_ktp] = useState("");
-  const [role, setRole] = useState("");
+  const [file_ktp, setFile_ktp] = useState(null);
+  const role = "mitra";
 
   const clickregis = () => {
-  var axios = require('axios');
-  var FormData = require('form-data');
-  var fs = require('fs');
-  var data = new FormData();
-    data.append(name, name);
-    data.append(email, email);
-    data.append(password, password);
-    data.append(address, address);
-    data.append(phone, phone);
-    data.append(file_ktp, fs.createReadStream(hzoAdiEan/file_ktp));
-    data.append(role, role);
-
-  var config = {
-    method: 'post',
-    url: 'http://34.125.22.211/register',
-    headers: { 
-      ...data.getHeaders()
-    },
-    data : data
-  };
-
-  axios(config)
-    .then(function (response) {
-      setCookie("Token", response.data.data.token)
-      alert("Berhasil Daftar");
+    
+    const formData=new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("address", address);
+    formData.append("phone", phone);
+    formData.append("file_ktp", file_ktp);
+    formData.append("role", role);
+  
+    axios
+    .post("http://34.125.22.211/register", formData)
+    .then((res) => {
+      alert("Berhasil Registrasi");
       Router.push("/login");
-      console.log(JSON.stringify(response.data));
     })
-    .catch(function (error) {
-      alert("Gagal Daftar");
-      console.log(error);
-    });
+    .catch((err) => alert("gagal register"))
   };
+
 
   return (
     <div>
@@ -53,7 +41,7 @@ const RegisterMitra = () => {
         <h1>YOUR ACCOUNT FOR EVERYTHING WH</h1>
         <Row>
           <Col sm={6}>
-            <Form className="mx-3">
+            <Form className="mx-3" >
               <Form.Group className="mb-2">
                 <Form.Control type="email" placeholder="Enter Name" onChange={(e) => setName(e.target.value)} />
               </Form.Group>
@@ -73,7 +61,8 @@ const RegisterMitra = () => {
           </Col>
           <Col sm={6}>
             <div className="upld">
-              <button className="btnuplod" onChange={(e) => setFile_ktp(e.target.value)}>Unggah File</button>
+              <input  type="file" onChange={(e) => setFile_ktp(e.target.files[0])}></input>
+
               <div className="boxktp"></div>
             </div>
           </Col>
