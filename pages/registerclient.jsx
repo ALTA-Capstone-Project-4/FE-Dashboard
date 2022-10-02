@@ -68,7 +68,7 @@ const RegisterClient = () => {
           <button onClick={handleRegClient} className="buttonloginc text-white mt-2" type="submit">
             Daftar
           </button>
-          <div className="txtsdh">
+          <div className="txtsdh text-center">
             <p className="mt-1">
               Sudah Punya Akun ?
               <a className="txtoren" href="/login">

@@ -1,7 +1,9 @@
+
 import React, { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
 import Router from "next/router";
 import axios from "axios";
+
 
 const RegisterMitra = () => {
   const [name, setName] = useState("");
@@ -60,6 +62,7 @@ const RegisterMitra = () => {
           <Col sm={6}>
             <div className="upld">
               <input  type="file" onChange={(e) => setFile_ktp(e.target.files[0])}></input>
+
               <div className="boxktp"></div>
             </div>
           </Col>
