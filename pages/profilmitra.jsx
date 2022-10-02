@@ -1,12 +1,42 @@
-import React, { useState } from "react";
-import Sidebar from "../component/sidebar";
+import React, { useEffect, useState } from "react";
 import Navbar from "../component/navbarcomp";
 import Footer from "../component/footer";
-import { Col, Row, Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Container } from "react-bootstrap";
+import { getCookie } from "cookies-next";
 
 const ProfilMitra = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShoww, setModalShoww] = React.useState(false);
+  const [modalShowww, setModalShowww] = React.useState(false);
+
+  const [datas, setDatas] = useState("");
+  console.log(datas);
+
+  const getDataProfile = () => {
+  var axios = require('axios');
+
+  var config = {
+    method: 'get',
+    url: 'http://34.125.22.211/mitra',
+    headers: { 
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjQ4MTc5OTcsInJvbGUiOiJtaXRyYSIsInVzZXJJZCI6NjF9.Ek8mydwGvtbvMM_P2g_TXG9GOq_xKqoKPe8-Ttjg4iA',
+    }
+  };
+
+  axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      setDatas(response.data.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  };
+
+  useEffect(() => {
+    getDataProfile();
+  }, []);
+
 
   // Modal Edit Profile
   function EditProfile(props) {
@@ -36,8 +66,32 @@ const ProfilMitra = () => {
   }
   // akhir modal edit profile mitra
 
+  // Modal Tambah Gudang //
+  function TambahGudang(props) {
+    return (
+      <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">Tambah Gudang Saya</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Label>Nama</Form.Label>
+          <Form.Control type="text" placeholder="Masukan Nama" />
+          <Form.Label>Alamat</Form.Label>
+          <Form.Control type="text" placeholder="Masukan Alamat" />
+          <Form.Label>Lokasi</Form.Label>
+          <Form.Control type="text" placeholder="Masukan Lokasi" />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Save</Button>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+  // akhir modal tambah //
+
   // Modal Edit gudang Profile
-  function EditProfile(props) {
+  function ProfileGudang(props) {
     return (
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton>
@@ -62,19 +116,17 @@ const ProfilMitra = () => {
   return (
     <div>
       <Navbar />
-      <Row className="gx-0">
-        <Col lg={4}>
-          <div className="sdbr">
-            <Sidebar />
+      <Container className="gx-0">
+          <div className="tambahgd">
+            <button className="btntambah" onClick={() => setModalShoww(true)} >Tambah Gudang</button>
+            <TambahGudang show={modalShoww} onHide={() => setModalShoww(false)} />
           </div>
-        </Col>
-        <Col lg={4} className="mt-5">
           <div className="profright">
             <h3>Akun Saya</h3>
-            <p>Email : Teguh@gmail.com</p>
-            <p>Nama: Teguh</p>
-            <p>Alamat : Jln.Teguh</p>
-            <p>No.Hp : 081274882212</p>
+            <p>Email : {datas.email}</p>
+            <p>Nama: {datas.name}</p>
+            <p>Alamat : {datas.address}</p>
+            <p>No.Hp : {datas.email}</p>
             <button className="btneditmit" onClick={() => setModalShow(true)}>
               Edit
             </button>
@@ -84,18 +136,17 @@ const ProfilMitra = () => {
           <div className="profright2">
             <h3>Profil Gudang</h3>
             <p>Nama: Teguh</p>
-            <p>Alamat : Jln.Teguh</p>
+            <p>Alamat: Jln.Teguh</p>
             <p>Lokasi Gudang :</p>
             <div className="lokmap"></div>
-            <button className="btneditmit mt-2" onClick={() => setModalShoww(true)}>
+            <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
               Edit
             </button>
-            <EditProfile show={modalShoww} onHide={() => setModalShoww(false)} />
+            <ProfileGudang show={modalShowww} onHide={() => setModalShowww(false)} />
 
             <span className="none">.</span>
           </div>
-        </Col>
-      </Row>
+      </Container>
       <Footer />
     </div>
   );
