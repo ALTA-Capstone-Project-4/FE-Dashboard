@@ -15,11 +15,11 @@ function NavbarComp() {
           <Nav className="me-auto">
           </Nav>
           <Nav>
-            <Nav.Link href="#home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
-            <Nav.Link href="#tentang-kami"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
-            <Nav.Link href="#menjadi-mitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
-            <Nav.Link href="#menjadi-client"><p className="yellow-font-hover">Menjadi Client</p></Nav.Link>
-            <Nav.Link href="#login"><p className="yellow-font-hover">Masuk</p ></Nav.Link>
+            <Nav.Link href="/home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
+            <Nav.Link href="/"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
+            <Nav.Link href="/registermitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
+            <Nav.Link href="/registerclient"><p className="yellow-font-hover">Menjadi Client</p></Nav.Link>
+            <Nav.Link href="/login"><p className="yellow-font-hover">Masuk</p ></Nav.Link>
           </Nav>
           <Nav>
           <Nav><p className="yellow-font">Hello, User</p ><FontAwesomeIcon icon={faUserCircle} size='xl' className='yellow-font-hover'/></Nav>
