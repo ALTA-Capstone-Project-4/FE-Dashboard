@@ -1,3 +1,7 @@
+.gx-0 {
+  margin: 150px 0px;
+}
+
 .profright {
   width: 830px;
   height: auto;
@@ -7,14 +11,41 @@
   margin-bottom: 40px;
 }
 
+.tambahgd{
+  margin-bottom: 50px;
+  margin-right: 95px;
+}
+
+.btntambah {
+  width: 150px;
+  height: 30px;
+  background-color: #104b0b;
+  border-radius: 8px;
+  border: #104b0b;
+  color: #fff;
+  font: 18px;
+  float: right;
+}
+
+.btntambah:hover {
+  background-color: #fa990e;
+  border: #fa990e;
+}
+
 .btneditmit {
   width: 120px;
   height: 30px;
   background-color: #104b0b;
   border-radius: 8px;
+  border: #104b0b;
   color: white;
   font: 18px;
   float: right;
+}
+
+.btneditmit:hover {
+  background-color: #fa990e;
+  border: #fa990e;
 }
 
 .none {
