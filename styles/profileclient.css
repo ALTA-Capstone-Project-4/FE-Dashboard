@@ -13,6 +13,25 @@
   margin-right: 40px;
 }
 
+.ptprfl {
+  width: 300px;
+  height: 300px;
+  margin: 0px auto;
+  float: none;
+  display: table;
+}
+
+.dlt {
+  width: 120px;
+  background-color: #ff0b0b;
+  color: white;
+  border-radius: 8px;
+  border: #ff0b0b;
+  float: right;
+  margin-right: 35px;
+  margin-bottom: 50px;
+}
+
 @media (max-width: 1265px) {
   .profcr {
     width: 100%;
