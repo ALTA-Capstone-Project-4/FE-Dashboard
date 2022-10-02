@@ -23,10 +23,21 @@
 }
 
 .buttonlogin {
+  color: #fff;
   width: 350px;
   background-color: #104b0b;
   font-size: 18px;
   border: #104b0b solid;
+  border-radius: 8px;
+  margin: 0px auto;
+  float: none;
+  display: table;
+}
+
+.buttonlogin:hover{
+  color: #fff;
+  background-color: #fa990e;
+  border: #fa990e solid;
 }
 
 .plog a {
