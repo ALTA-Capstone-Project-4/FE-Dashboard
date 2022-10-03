@@ -18,7 +18,7 @@ const ProfilMitra = () => {
 
   var config = {
     method: 'get',
-    url: 'http://34.125.22.211/mitra',
+    url: 'https://group4.altaproject.online/mitra',
     headers: { 
       Authorization: `Bearer ${getCookie("Token")}`,
     }
@@ -65,18 +65,14 @@ const ProfilMitra = () => {
       };
 
     axios
-      .put(`http://34.125.22.211:80/mitra`, formData, config)
+      .put(`https://group4.altaproject.online/mitra`, formData, config)
       .then((res) => {
         alert("Berhasil Unggah File");
         window.location.reload();
       })
       .catch((err) => alert("Gagal Unggah File"));
     };
-    
-  const clickFileInput = (e) => {
-    onFileSelect(e.target.files[0]);
-  };
-
+ 
     return (
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton>
@@ -105,6 +101,8 @@ const ProfilMitra = () => {
   }
   // akhir modal edit profile mitra
 
+  const [datasGudang, setDatasGudang] = useState("");
+
   // Modal Post Tambah Gudang //
   function TambahGudang(props) {
     const [names, setNames] = useState("");
@@ -123,7 +121,7 @@ const ProfilMitra = () => {
 
     var config = {
       method: 'post',
-      url: 'http://34.125.22.211/gudang',
+      url: 'https://group4.altaproject.online/gudang',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -181,7 +179,7 @@ const ProfilMitra = () => {
 
     var config = {
       method: 'put',
-      url: 'http://34.125.22.211/gudang',
+      url: 'https://group4.altaproject.online/gudang',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -249,9 +247,9 @@ const ProfilMitra = () => {
         </Col>
           <div className="profright2">
             <h3>Profil Gudang</h3>
-            <p>Nama: Teguh</p>
-            <p>Alamat: Jln.Teguh</p>
-            <p>Lokasi Gudang :</p>
+            <p>Nama: {datasGudang.name}</p>
+            <p>Alamat: {datasGudang.address}</p>
+            <p>Lokasi Gudang : </p>
             <div className="lokmap"></div>
             <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
               Edit
