@@ -10,14 +10,19 @@ const adminverification = () => {
   const [verifMitra, setVerifMitra] = useState([]);
   const [listMitra, setListMitra] = useState([]);
 
-  const goDetail = (id) => {
-    Router.push("/detailmitra");
-    console.log("ini id yg ditangkep", id)
+  const goDetail = (user) => {
+  Router.push({
+    pathname: `${user.name}`,
+    query: {
+      id: user.id
+    }
+  },);
+    
   };
 
   const getVerifMitra = () => {
     axios
-      .get("http://34.125.95.168/mitra/unverify", {
+      .get("https://group4.altaproject.online/mitra/unverify", {
         headers: {
           Authorization: `Bearer ${getCookie("Token")}`,
         },
@@ -30,7 +35,7 @@ const adminverification = () => {
 
   const getListMitra = () => {
     axios
-      .get("http://34.125.95.168/mitra/verified", {
+      .get("https://group4.altaproject.online/mitra/verified", {
         headers: {
           Authorization: `Bearer ${getCookie("Token")}`,
         },
@@ -73,7 +78,7 @@ const adminverification = () => {
           return (
             <Row>
               <Col sm={6}>
-                <button className="btnmit black-font" onClick={() => goDetail(user.id)}>
+                <button className="btnmit black-font" onClick={() => goDetail(user)}>
                   {user.name}
                 </button>
               </Col>
