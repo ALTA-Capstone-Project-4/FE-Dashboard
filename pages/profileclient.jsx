@@ -22,7 +22,7 @@ const ProfileClient = () => {
 
     var config = {
       method: "get",
-      url: "http://34.125.22.211:80/penitip",
+      url: "https://group4.altaproject.online/penitip",
       headers: {
         Authorization: `Bearer ${getCookie("Token")}`,
       },
@@ -44,7 +44,7 @@ const ProfileClient = () => {
 
     var config = {
       method: "delete",
-      url: "http://34.125.22.211:80/penitip",
+      url: "https://group4.altaproject.online/penitip",
       headers: {
         Authorization: `Bearer ${getCookie("Token")}`,
       },
@@ -77,8 +77,8 @@ const ProfileClient = () => {
     // handle Edit Profile
     const handleEdit = () => {
       const formData = new FormData();
-      formData.append("name", email);
-      formData.append("email", name);
+      formData.append("name", name);
+      formData.append("email", email);
       formData.append("password", address);
       formData.append("address", phone);
       formData.append("phone", password);
@@ -90,7 +90,7 @@ const ProfileClient = () => {
       };
 
       axios
-        .put(`http://34.125.22.211:80/penitip`, formData, config)
+        .put(`https://group4.altaproject.online/penitip`, formData, config)
         .then((res) => {
           alert("File Upload success");
           window.location.reload();
