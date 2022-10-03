@@ -33,7 +33,7 @@ const DetailMitra = () => {
       <Row className="gx-0">
         <Col lg={4} className="p-0">
           <div className="fotomit marginnav">
-            <img />
+            <img/>
           </div>
         </Col>
         <Col lg={8} className="p-0">
@@ -41,7 +41,9 @@ const DetailMitra = () => {
             <div className="detright">
               <div>
                 <h3>Profil Mitra</h3>
-                <div className="fotodetktp"></div>
+                <div className="fotodetktp">
+                  <img src={detailMitra.file_ktp} className="img-fluid"/>
+                </div>
               </div>
               <div>
                 <Row>
@@ -54,8 +56,8 @@ const DetailMitra = () => {
                   </Col>
                   <Col md={6}>
                     <h3>Data Gudang</h3>
-                    <p>Nama Gudang : Teguh@gmail.com</p>
-                    <p>Lokasi Gudang: Teguh</p>
+                    <p>Nama Gudang : {detailMitra.gudangname}</p>
+                    <p>Lokasi Gudang: {detailMitra.gudanglocation}</p>
                   </Col>
                 </Row>
               </div>

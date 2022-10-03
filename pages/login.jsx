@@ -16,7 +16,7 @@ const Login = () => {
 
   var config = {
     method: 'post',
-    url: 'http://34.125.95.168/login',
+    url: 'https://group4.altaproject.online/login',
     headers: { 
       'Content-Type': 'application/json'
     },
