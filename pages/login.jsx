@@ -14,14 +14,15 @@ const Login = () => {
       password: password,
     });
 
-    var config = {
-      method: "post",
-      url: "https://group4.altaproject.online/login",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+
+  var config = {
+    method: 'post',
+    url: 'https://group4.altaproject.online/login',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
 
     axios(config)
       .then(function (response) {

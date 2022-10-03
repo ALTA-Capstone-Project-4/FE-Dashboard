@@ -10,13 +10,19 @@ const adminverification = () => {
   const [verifMitra, setVerifMitra] = useState([]);
   const [listMitra, setListMitra] = useState([]);
 
-  const goDetail = () => {
-    Router.push("/detailmitra");
+  const goDetail = (user) => {
+  Router.push({
+    pathname: `${user.name}`,
+    query: {
+      id: user.id
+    }
+  },);
+    
   };
 
   const getVerifMitra = () => {
     axios
-      .get("http://34.125.22.211/mitra/unverify", {
+      .get("https://group4.altaproject.online/mitra/unverify", {
         headers: {
           Authorization: `Bearer ${getCookie("Token")}`,
         },
@@ -29,7 +35,7 @@ const adminverification = () => {
 
   const getListMitra = () => {
     axios
-      .get("http://34.125.22.211/mitra/verified", {
+      .get("https://group4.altaproject.online/mitra/verified", {
         headers: {
           Authorization: `Bearer ${getCookie("Token")}`,
         },
@@ -50,12 +56,12 @@ const adminverification = () => {
       <Navbarcom />
       <div className="contenverif mx-auto p-3 after-navbar">
         <h2>Verifikasi Mitra Gudang</h2>
-        {verifMitra.map((item) => {
+        {verifMitra.map((user) => {
           return (
             <Row>
               <Col sm={6}>
                 <button className="btnmit black-font" type="submit">
-                  {item.name}
+                  {user.name}
                 </button>
               </Col>
               <Col sm={6} className="p-0 btnright">
@@ -68,12 +74,12 @@ const adminverification = () => {
       </div>
       <div className="contenmitra mx-auto p-3">
         <h2>Daftar Mitra Gudang</h2>
-        {listMitra.map((item) => {
+        {listMitra.map((user) => {
           return (
             <Row>
               <Col sm={6}>
-                <button className="btnmit black-font" onClick={goDetail}>
-                  {item.name}
+                <button className="btnmit black-font" onClick={() => goDetail(user)}>
+                  {user.name}
                 </button>
               </Col>
               <Col sm={6} className="p-0 btnright">
