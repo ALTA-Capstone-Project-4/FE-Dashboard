@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 
 const DetailMitra = () => {
+  const [ detailMitra, setDetailMitra ] = useState([]);
+
+  const getDetailMitra = () => {
+    axios
+  }
+
   return (
     <div className="contendetailmitra">
       <Navbarr />

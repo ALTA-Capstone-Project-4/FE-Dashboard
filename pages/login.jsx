@@ -16,7 +16,7 @@ const Login = () => {
 
   var config = {
     method: 'post',
-    url: 'http://34.125.22.211/login',
+    url: 'http://34.125.95.168/login',
     headers: { 
       'Content-Type': 'application/json'
     },
