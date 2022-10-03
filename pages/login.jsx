@@ -8,11 +8,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const clicklogin = () => {
-  var axios = require('axios');
-  var data = JSON.stringify({
-  email: email,
-  password: password
-  });
+    var axios = require("axios");
+    var data = JSON.stringify({
+      email: email,
+      password: password,
+    });
+
 
   var config = {
     method: 'post',
@@ -23,17 +24,17 @@ const Login = () => {
     data : data
   };
 
-  axios(config)
-    .then(function (response) {
-      setCookie("Token", response.data.data.token);
-      alert("Berhasil Masuk")
-      Router.push("/home");
-      console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      alert("Gagal Masuk")
-      console.log(error);
-    });
+    axios(config)
+      .then(function (response) {
+        setCookie("Token", response.data.data.token);
+        alert("Berhasil Masuk");
+        Router.push("/home");
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        alert("Gagal Masuk");
+        console.log(error);
+      });
   };
 
   return (
@@ -52,7 +53,7 @@ const Login = () => {
           </Form.Group>
         </Form>
         <button className="buttonlogin" type="submit" onClick={clicklogin}>
-            Masuk
+          Masuk
         </button>
         <div>
           <p className="plog text-center mt-1">

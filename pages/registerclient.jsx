@@ -23,7 +23,7 @@ const RegisterClient = () => {
 
     var config = {
       method: "post",
-      url: "http://34.125.22.211:80/register",
+      url: "https://group4.altaproject.online/register",
       headers: {
         "Content-Type": "application/json",
       },
