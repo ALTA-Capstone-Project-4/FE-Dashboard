@@ -37,6 +37,9 @@
   width: 100%;
   background-color: #104b0b;
   color: white;
+  border: #104b0b;
+  border-radius: 8px;
+  height: 30px;
 }
 
 .mcj {

@@ -32,6 +32,19 @@
   margin-bottom: 50px;
 }
 
+.imglhnn {
+  width: 270px;
+  height: 270px;
+}
+
+.btnfav {
+  background-color: #fa990e;
+  color: white;
+  border: #fa990e;
+  border-radius: 8px;
+  height: 30px;
+}
+
 @media (max-width: 1265px) {
   .profcr {
     width: 100%;

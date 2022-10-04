@@ -1,9 +1,50 @@
 import NavbarComp from "../component/navbarcomp";
 import Footer from "../component/footer";
-import { InputGroup, Form, Card, Button } from "react-bootstrap";
+import { InputGroup, Form, Card, Button, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from "react";
+import { getCookie } from "cookies-next";
+import Router from "next/router";
 
 const Home = () => {
+  const [datas, setDatas] = useState([]);
+
+  useEffect(() => {
+    getHome();
+  }, []);
+  console.log(datas);
+  const getHome = () => {
+    var axios = require("axios");
+
+    var config = {
+      method: "get",
+      url: "https://group4.altaproject.online/gudang?page=1",
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`,
+      },
+    };
+
+    axios(config)
+      .then(function (response) {
+        setDatas(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  // go Check
+  const goCheck = (datas) => {
+    console.log("ini datas diklik", datas.id_lahan);
+    Router.push({
+      pathname: "/lahanclient",
+      query: {
+        id: datas.gudang_id,
+        nama: datas.nama,
+      },
+    });
+  };
+
   return (
     <div>
       <NavbarComp />
@@ -19,54 +60,38 @@ const Home = () => {
         }}
       >
         <div className="container-fluid">
-          <p className="fs-2 fw-bold white-font text-center">
-            Mau Cari Tempat Penitipan?
-          </p>
+          <p className="fs-2 fw-bold white-font text-center">Mau Cari Tempat Penitipan?</p>
           <div className="container">
             <InputGroup>
-              <Form.Control
-                type="text" 
-                placeholder="Cari.."
-                aria-label="Input group example"
-                aria-describedby="btnGroupAddon"
-              />
-              <button className=" yellow-background-hover white-font button-search px-4 py-1 fw-bold">
-                Cari
-              </button>
+              <Form.Control type="text" placeholder="Cari.." aria-label="Input group example" aria-describedby="btnGroupAddon" />
+              <button className=" yellow-background-hover white-font button-search px-4 py-1 fw-bold">Cari</button>
             </InputGroup>
           </div>
         </div>
       </div>
 
-      <p className="pt-5 fs-3 fw-bold yellow-font text-center">
-        Gudang Yang Tersedia
-      </p>
+      <p className="pt-5 fs-3 fw-bold yellow-font text-center">Gudang Yang Tersedia</p>
 
       <div className="container py-5 ">
         <div className="row d-flex">
-          <div className="col">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Text>Ukuran Lahan</Card.Text>
-                <Card.Text>Harga Lahan plg murah</Card.Text>
-                <Button>Go Check</Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
+          <Row>
+            {datas.map((datas, index) => {
+              return (
+                <Col>
+                  <div key={index} className="col">
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img variant="top" src={datas.foto_lahan} />
+                      <Card.Body>
+                        <Card.Text>{datas.nama}</Card.Text>
+                        <Card.Text>{datas.harga}</Card.Text>
+                        <Button onClick={() => goCheck(datas)}>Go Check</Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </Col>
+              );
+            })}
+          </Row>
         </div>
       </div>
       <Footer />
