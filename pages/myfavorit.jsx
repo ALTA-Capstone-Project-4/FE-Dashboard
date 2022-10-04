@@ -1,67 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 import { Row, Col } from "react-bootstrap";
 import Router from "next/router";
-import Sidebarr from "../component/sidebarr";
 
 const MyFavorit = () => {
-  const goCheckout = () => {
-    Router.push("/checkout");
+  const [datas, setDatas] = useState("");
+  console.log(datas);
+
+  const getFavorite = () => {
+    var axios = require('axios');
+
+    var config = {
+      methode: 'get',
+      url: 'https://group4.altaproject.online/favorite',
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`,
+      }
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setDatas(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      useEffect(() => {
+        getFavorite();
+      }, []);
+  }
+
+  const clickPesan = (datas) => {
+    console.log(datas);
+    Router.push({
+      pathname: "/checkout",
+      query: {
+        LahanName: datas.LahanName,
+        LahanHarga: datas.LahanHarga,
+        LahanFotoLahan: datas.LahanFotoLahan,
+      },
+    });
+  };
+
+  const handleDelete = ({ id }) => {
+    var axios = require("axios");
+    var config = {
+      method: "delete",
+      url: `https://group4.altaproject.online/favorite/${id}`,
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`,
+      },
+    };
+
+    axios(config)
+      .then(function (response) {
+        getData();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
     <div>
       <Navbarr />
       <Row className="gx-0  min-vh-100">
-        <Col lg={4}>
-          <div className="sdbr">
-            <Sidebarr />
-          </div>
-        </Col>
-        <Col lg={8}>
+        <Col>
           <h3 className="favoritsaya marginnav">Favorit Saya</h3>
           <Row className="contenmyfav">
             <Col>
               <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn" onClick={goCheckout}>
-                  Pesan Sekarang
-                </button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
-              </div>
-            </Col>
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">Pesan Sekarang</button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
-              </div>
-            </Col>
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">Pesan Sekarang</button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
-              </div>
-            </Col>
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" />
-                <p className="txtmf">Lahan 2x2M</p>
-                <p className="txtmf">Rp.1.000.000</p>
-                <button className="btnpsn">Pesan Sekarang</button>
-                <br />
-                <button className="btnpsn2">Hapus</button>
+                <img className="gambarfav" src={datas.LahanFotoLahan} />
+                <p className="txtmf">{datas.LahanName}</p>
+                <p className="txtmf">{datas.LahanHarga}</p>
+                <div className='btndf'>
+                  <button className="btnpsndf" onClick={clickPesan}>Pesan</button>
+                  <button className="btnpsndf2" onClick={() => handleDelete(datas)}>Hapus</button>
+                </div>
               </div>
             </Col>
           </Row>

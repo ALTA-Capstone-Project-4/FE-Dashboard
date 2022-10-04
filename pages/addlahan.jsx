@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
-import ComEditLahan from "../component/comeditlahan";
 import Footer from "../component/footer";
 import NavbarComp from "../component/navbarcomp";
 import { getCookie } from "cookies-next";
 import axios from "axios";
+import Router from "next/router";
 
 const addlahan = () => {
   const [nama, setNama] = useState("");
