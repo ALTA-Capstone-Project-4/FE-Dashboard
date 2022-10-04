@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import NavbarComp from "../component/navbarcomp";
@@ -14,6 +15,7 @@ const DaftarLahan = () => {
   }, []);
 
   console.log("ini data", datas);
+
 
   const tambahlahan = () => {
     Router.push({
@@ -50,7 +52,9 @@ const DaftarLahan = () => {
 
   return (
     <div>
-      <NavbarComp />
+
+        <NavbarMitra />
+
       <Row className="gx-0  min-vh-100 dflahan">
         <Col md={12} lg={12}>
           <div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbarcom from "../component/navbarcomp";
+import NavbarAdmin from "../component/navbar-admin";
 import Footer from "../component/footer";
 import { Row, Col } from "react-bootstrap";
 import Router from "next/router";
@@ -101,7 +101,7 @@ const adminverification = () => {
 
   return (
     <div>
-      <Navbarcom />
+      <NavbarAdmin />
       <div className="contenverif mx-auto p-3 after-navbar">
         <h2>Verifikasi Mitra Gudang</h2>
         {verifMitra.map((user) => {
