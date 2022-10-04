@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { deleteCookie } from "cookies-next";
 
-const NavbarMitra = () => {
+const NavbarMitra = ({name}) => {
 
   const logout = () => {
     deleteCookie("Token");
     alert("berhasil logout")
   }
+
 
   return (
     <div>
@@ -35,11 +36,11 @@ const NavbarMitra = () => {
               <Nav.Link href="#menjadi-mitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
               <Nav.Link href="#tentang-kami"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
               <Nav.Link><FontAwesomeIcon icon={faUserCircle} size="xl" className="yellow-font"/></Nav.Link>
-                <NavDropdown  title={<span className="yellow-font-hover" alignRight>Hello, Pemilik Gudang</span>}>
+                <NavDropdown  title={<span className="yellow-font-hover" alignRight>Hello, {name}Pemilik Gudang</span>}>
                   <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Daftar Lahan</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Gudang Saya</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/profilmitra" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
+                  <NavDropdown.Item href="/profilmitra" className="yellow-font-hover fw-semibold" >Akun</NavDropdown.Item>
                   <NavDropdown.Item href="/" className="yellow-font-hover fw-semibold" onClick={logout}>Keluar</NavDropdown.Item>
                 </NavDropdown>
             </Nav>

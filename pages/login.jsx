@@ -3,10 +3,12 @@ import Router from "next/router";
 import { useState } from "react";
 import { Form } from "react-bootstrap";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [role, setRole] = useState([])
+  const [role, setRole] = useState([])
+  
 
   const clicklogin = () => {
     var axios = require("axios");
@@ -29,10 +31,25 @@ const Login = () => {
       .then(function (response) {
         setCookie("Token", response.data.data.token);
         alert("Berhasil Masuk");
-        // setRole(response.data.data)
+        setRole(response.data.data)
+        // {(response.data.data.role) === "admin" ? Router.push("/adminverification") :
+        // (response.data.data.role) === "mitra" ? Router.push("/profilmitra") :
+        // (response.data.data.role) === "client" ? Router.push("/home") : null}
+
         {(response.data.data.role) === "admin" ? Router.push("/adminverification") :
-        (response.data.data.role) === "mitra" ? Router.push("/profilmitra") :
+        (response.data.data.role) === "mitra" ? Router.push({pathname:"/profilmitra", query: { name: (response.data.data.name)}}) :
         (response.data.data.role) === "client" ? Router.push("/home") : null}
+
+        // Router.push({
+        //   pathname: "/dashboard/detail",
+        //   query: {
+        //     title: data.title,
+        //     author: data.author,
+        //     image: data.imageUrl,
+        //     content: data.content,
+        //   },
+        // });
+
         console.log(JSON.stringify(response.data));
       })
       .catch(function (error) {

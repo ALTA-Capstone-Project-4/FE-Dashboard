@@ -1,11 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import NavbarComp from '../component/navbarcomp';
 import Sidebar from '../component/sidebar';
 import Footer from '../component/footer';
 import Router from 'next/router';
+import NavbarMitra from '../component/navbar-mitra';
 
 const DaftarLahan = () => {
+
   const tambahlahan = () => {
     Router.push({
       pathname: "/addlahan",
@@ -14,7 +15,7 @@ const DaftarLahan = () => {
 
   return (
     <div>
-        <NavbarComp />
+        <NavbarMitra />
       <Row className="gx-0  min-vh-100 dflahan">
         <Col md={4} lg={4}>
           <div className="sdbr">
