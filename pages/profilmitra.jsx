@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../component/navbarcomp";
 import Footer from "../component/footer";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { getCookie, setCookie } from "cookies-next";
+import NavbarMitra from "../component/navbar-mitra";
 
 const ProfilMitra = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -220,7 +220,7 @@ const ProfilMitra = () => {
   // akhir modal edit gudang mitra
   return (
     <div>
-      <Navbar />
+      <NavbarMitra />
       <Row className="min-vh-100 gx-0">
         <Col lg={4}>
           <div className="marginnav">

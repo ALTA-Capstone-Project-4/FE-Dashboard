@@ -3,8 +3,15 @@ import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { deleteCookie } from "cookies-next";
 
 const NavbarMitra = () => {
+
+  const logout = () => {
+    deleteCookie("Token");
+    alert("berhasil logout")
+  }
+
   return (
     <div>
       <Navbar
@@ -32,8 +39,8 @@ const NavbarMitra = () => {
                   <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Daftar Lahan</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Gudang Saya</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.4" className="yellow-font-hover fw-semibold">Keluar</NavDropdown.Item>
+                  <NavDropdown.Item href="/profilmitra" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
+                  <NavDropdown.Item href="/" className="yellow-font-hover fw-semibold" onClick={logout}>Keluar</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
           </Navbar.Collapse>

@@ -3,8 +3,15 @@ import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { deleteCookie } from "cookies-next";
 
 const NavbarAdmin = () => {
+
+  const logout = () => {
+    deleteCookie("Token");
+    alert("berhasil logout")
+  }
+
   return (
     <div>
       <Navbar
@@ -13,7 +20,7 @@ const NavbarAdmin = () => {
         className="shadow-sm p-3  bg-body rounded fw-semibold fixed-top"
       >
         <Container className="px-0">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#">
             <p className="yellow-font">
               <span className="green-font">WARE</span>HOUSE
             </p>
@@ -24,13 +31,13 @@ const NavbarAdmin = () => {
             <Nav
             style={{ maxHeight: '100px' }}
             navbarScroll>
-              <Nav.Link href="#home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
-              <Nav.Link href="#tentang-kami"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
+              <Nav.Link href="/home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
+              <Nav.Link href="/"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
               <Nav.Link><FontAwesomeIcon icon={faUserCircle} size="xl" className="yellow-font"/></Nav.Link>
                 <NavDropdown  title={<span className="yellow-font-hover" alignRight>Hello, Admin</span>}>
-                  <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Verifikasi</NavDropdown.Item>
+                  <NavDropdown.Item href="/adminverification" className="yellow-font-hover fw-semibold">Verifikasi</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4" className="yellow-font-hover fw-semibold">Keluar</NavDropdown.Item>
+                  <NavDropdown.Item href="/" className="yellow-font-hover fw-semibold" onClick={logout}>Keluar</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
           </Navbar.Collapse>

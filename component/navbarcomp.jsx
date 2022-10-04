@@ -20,7 +20,7 @@ function NavbarComp() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link href="#home">
+              <Nav.Link href="/">
                 <p className="yellow-font-hover">Beranda</p>
               </Nav.Link>
               <Nav.Link href="#tentang-kami">
@@ -32,7 +32,7 @@ function NavbarComp() {
               <Nav.Link href="#menjadi-client">
                 <p className="yellow-font-hover">Menjadi Client</p>
               </Nav.Link>
-              <Nav.Link href="#login">
+              <Nav.Link href="/login">
                 <p className="yellow-font-hover">Masuk</p>
               </Nav.Link>
             </Nav>
