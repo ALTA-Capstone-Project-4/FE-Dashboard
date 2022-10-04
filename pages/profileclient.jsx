@@ -33,7 +33,6 @@ const ProfileClient = () => {
         setDataprofile(response.data.data);
       })
       .catch(function (error) {
-        console.log(JSON.stringify(response.data));
         console.log(error);
       });
   };
@@ -123,7 +122,6 @@ const ProfileClient = () => {
           <Form.Control onChange={(e) => setSelectedFile(e.target.files[0])} type="file" placeholder="Masukan Password" />
         </Modal.Body>
         <Modal.Footer>
-          <input></input>
           <Button onClick={handleEdit}>Save</Button>
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
