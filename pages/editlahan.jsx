@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
-import ComEditLahan from "../component/comeditlahan";
 import Footer from "../component/footer";
 import dynamic from "next/dynamic";
+import { getCookie } from "cookies-next";
+import axios from "axios";
+import { useRouter } from "next/router";
+import Router from "next/router";
 
 const editlahan = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
+
+  const router = useRouter();
+  const ID = router.query.ID;
+  const gudangID = router.query.gudangID;
+
+  console.log("ini id", ID);
 
   const [nama, setNama] = useState("");
   const [luas, setLuas] = useState("");
@@ -36,10 +45,15 @@ const editlahan = () => {
     };
 
     axios
-      .post(`https://group4.altaproject.online/lahan/${id}`, formData, config)
+      .put(`https://group4.altaproject.online/lahan/${ID}`, formData, config)
       .then((res) => {
         alert("Lahan berhasil diedit");
-        Router.push("/daftarlahan");
+        Router.push({
+          pathname: "/daftarlahan",
+          query: {
+            gudangID: gudangID,
+          },
+        });
       })
       .catch((err) => alert("Lahan Gagal diedit"));
   };
