@@ -1,10 +1,29 @@
-import NavbarComp from "../component/navbarcomp";
+
 import Footer from "../component/footer";
 import { InputGroup, Form, Card, Button, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { getCookie } from "cookies-next";
 import Router from "next/router";
+import axios from "axios";
+import NavbarClient from "../component/navbar-client";
+
+
+// export const getServerSideProps = async () => {
+//   const response = await axios.get("https://group4.altaproject.online/gudang?page=1",
+//   {
+//     headers : {
+//       Authorization: `Bearer ${getCookie("Token")}`,
+//     },
+//   });
+ 
+//   return {
+//     props: {
+//       datas: response.data.data,
+//     },
+//   };
+// };
+
 
 const Home = () => {
   const [datas, setDatas] = useState([]);
@@ -33,6 +52,9 @@ const Home = () => {
       });
   };
 
+console.log("data", )
+
+
   // go Check
   const goCheck = (datas) => {
     console.log("ini datas diklik", datas.id_lahan);
@@ -47,7 +69,7 @@ const Home = () => {
 
   return (
     <div>
-      <NavbarComp />
+      <NavbarClient />
 
       <div
         className="container-fluid d-flex justify-content-center align-items-center after-navbar"

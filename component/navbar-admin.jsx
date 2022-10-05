@@ -9,6 +9,7 @@ const NavbarAdmin = () => {
 
   const logout = () => {
     deleteCookie("Token");
+    deleteCookie("Name")
     alert("berhasil logout")
   }
 
