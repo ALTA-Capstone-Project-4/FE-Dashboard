@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 import { Row, Col } from "react-bootstrap";
 import Router from "next/router";
+import dynamic from "next/dynamic";
 
 const MyFavorit = () => {
   const [datas, setDatas] = useState("");
-  console.log(datas);
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
 
   const getFavorite = () => {
     var axios = require('axios');
@@ -66,7 +68,7 @@ const MyFavorit = () => {
 
   return (
     <div>
-      <Navbarr />
+      <NavbarClient />
       <Row className="gx-0  min-vh-100">
         <Col>
           <h3 className="favoritsaya marginnav">Favorit Saya</h3>
