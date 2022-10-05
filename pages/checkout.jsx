@@ -9,7 +9,6 @@ const Checkout = () => {
     ssr: false,
   });
 
-
   return (
     <div>
       <NavbarClient />
