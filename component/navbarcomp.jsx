@@ -23,13 +23,13 @@ function NavbarComp() {
               <Nav.Link href="/">
                 <p className="yellow-font-hover">Beranda</p>
               </Nav.Link>
-              <Nav.Link href="#tentang-kami">
+              <Nav.Link href="#about">
                 <p className="yellow-font-hover">Tentang Kami</p>
               </Nav.Link>
-              <Nav.Link href="#menjadi-mitra">
+              <Nav.Link href="#mitra">
                 <p className="yellow-font-hover">Menjadi Mitra</p>
               </Nav.Link>
-              <Nav.Link href="#menjadi-client">
+              <Nav.Link href="#penitip">
                 <p className="yellow-font-hover">Menjadi Client</p>
               </Nav.Link>
               <Nav.Link href="/login">
