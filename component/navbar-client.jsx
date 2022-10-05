@@ -24,7 +24,7 @@ const NavbarClient = () => {
         className="shadow-sm p-3  bg-body rounded fw-semibold"
       >
         <Container className="px-0">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             <p className="yellow-font">
               <span className="green-font">WARE</span>HOUSE
             </p>
@@ -35,15 +35,15 @@ const NavbarClient = () => {
             <Nav
             style={{ maxHeight: '100px' }}
             navbarScroll>
-              <Nav.Link href="#home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
-              <Nav.Link href="#menjadi-mitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
-              <Nav.Link href="#tentang-kami"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
+              <Nav.Link href="/home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
+              <Nav.Link href="/registermitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
+              <Nav.Link href="/"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
               <Nav.Link><FontAwesomeIcon icon={faUserCircle} size="xl" className="yellow-font"/></Nav.Link>
                 <NavDropdown  title={<span className="yellow-font-hover" alignRight>Hello, {name} </span>}>
-                  <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Favorit</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Daftar Lahan</NavDropdown.Item>
+                  <NavDropdown.Item href="/myfavorit" className="yellow-font-hover fw-semibold">Favorit</NavDropdown.Item>
+                  <NavDropdown.Item href="/my-room" className="yellow-font-hover fw-semibold">Daftar Lahan</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
+                  <NavDropdown.Item href="/profilclient" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
                   <NavDropdown.Item href="/" className="yellow-font-hover fw-semibold" onClick={logout}>Keluar</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
