@@ -5,11 +5,17 @@ import { getCookie } from "cookies-next";
 import axios from "axios";
 import Router from "next/router";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 
 const addlahan = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
+
+  const router = useRouter();
+  const gudangID = router.query.gudangID;
+
+  console.log("ini guandaw", gudangID);
 
   const [nama, setNama] = useState("");
   const [luas, setLuas] = useState("");
@@ -41,7 +47,12 @@ const addlahan = () => {
       .post(`https://group4.altaproject.online/lahan`, formData, config)
       .then((res) => {
         alert("Lahan berhasil ditambahkan");
-        Router.push("/daftarlahan");
+        Router.push({
+          pathname: "/daftarlahan",
+          query: {
+            gudangID: gudangID,
+          },
+        });
       })
       .catch((err) => alert("Lahan Gagal Ditambahkan"));
   };
@@ -67,15 +78,15 @@ const addlahan = () => {
                   </Form.Group>
                   <Form.Group className="mb-1">
                     <Form.Label className="mb-0">Luas</Form.Label>
-                    <Form.Control onChange={(e) => setLuas(e.target.value)} type="number" placeholder="Enter Luas" />
+                    <Form.Control onChange={(e) => setLuas(e.target.value)} type="text" placeholder="Enter Luas" />
                   </Form.Group>
                   <Form.Group className="mb-1">
                     <Form.Label className="mb-0">Panjang</Form.Label>
-                    <Form.Control onChange={(e) => setPanjang(e.target.value)} type="number" placeholder="Enter Panjang" />
+                    <Form.Control onChange={(e) => setPanjang(e.target.value)} type="text" placeholder="Enter Panjang" />
                   </Form.Group>
                   <Form.Group className="mb-1">
                     <Form.Label className="mb-0">Lebar</Form.Label>
-                    <Form.Control onChange={(e) => setLebar(e.target.value)} type="number" placeholder="Enter Lebar" />
+                    <Form.Control onChange={(e) => setLebar(e.target.value)} type="text" placeholder="Enter Lebar" />
                   </Form.Group>
                   <Form.Group className="mb-1">
                     <Form.Label className="mb-0">Harga</Form.Label>

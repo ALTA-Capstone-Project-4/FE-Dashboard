@@ -4,12 +4,21 @@ import Footer from "../component/footer";
 import Router from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import axios from "axios";
 
 const DaftarLahan = () => {
-  const [datas, setDatas] = useState([]);
+  const router = useRouter();
+  const gudangID = router.query.gudangID;
+
+  console.log("gudang id", gudangID);
+
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
+
+  // const [id, setID] = useState("");
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     getLahan();
@@ -17,26 +26,53 @@ const DaftarLahan = () => {
 
   console.log("ini data", datas);
 
-
-  const tambahlahan = () => {
+  const tambahlahan = (datas) => {
     Router.push({
       pathname: "/addlahan",
+      query: {
+        gudangID: gudangID,
+      },
     });
   };
 
-  const editlahan = () => {
+  const editlahan = (datas) => {
     Router.push({
       pathname: "/editlahan",
+      query: {
+        ID: datas.ID,
+        gudangID: gudangID,
+      },
     });
   };
 
-  // Get Lahan
+  // get ID Gudang
+  // const getIdgudang = () => {
+  //   var axios = require("axios");
+
+  //   var config = {
+  //     method: "get",
+  //     url: "https://group4.altaproject.online/mitra",
+  //     headers: {
+  //       Authorization: `Bearer ${getCookie("Token")}`,
+  //     },
+  //   };
+
+  //   axios(config)
+  //     .then(function (response) {
+  //       setId(response.data.data.gudangid);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // };
+
+  // Get Lahan ${router.query.gudangid}
   const getLahan = () => {
     var axios = require("axios");
 
     var config = {
       method: "get",
-      url: "https://group4.altaproject.online/gudang/14/lahan",
+      url: `https://group4.altaproject.online/gudang/${gudangID}/lahan`,
       headers: {
         Authorization: `Bearer ${getCookie("Token")}`,
       },
@@ -44,6 +80,7 @@ const DaftarLahan = () => {
 
     axios(config)
       .then(function (response) {
+        console.log("ini respon", response.data.data);
         setDatas(response.data.data.lahan);
       })
       .catch(function (error) {
@@ -51,10 +88,31 @@ const DaftarLahan = () => {
       });
   };
 
+  const handleDelete = (datas) => {
+    var axios = require("axios");
+
+    var config = {
+      method: "delete",
+      url: `https://group4.altaproject.online/lahan/${datas.ID}`,
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`,
+      },
+    };
+
+    axios(config)
+      .then(function (response) {
+        alert("berhasil dihapus");
+        Router.push("/profilmitra");
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("Gagal Hapus");
+      });
+  };
+
   return (
     <div>
-
-        <NavbarMitra />
+      <NavbarMitra />
 
       <Row className="gx-0  min-vh-100 dflahan">
         <Col md={12} lg={12}>
@@ -69,16 +127,18 @@ const DaftarLahan = () => {
           <Row className="contenmyfav">
             {datas.map((datas, index) => {
               return (
-                <Col>
-                  <div key={index} className="cardfav">
+                <Col key={index}>
+                  <div className="cardfav">
                     <img className="gambarfav" src={datas.FotoLahan} />
                     <p className="txtmf">{datas.Nama}</p>
                     <p className="txtmf">{datas.Harga}</p>
                     <div className="btndf">
-                      <button onClick={editlahan} className="btnpsndf">
+                      <button onClick={() => editlahan(datas)} className="btnpsndf">
                         Edit
                       </button>
-                      <button className="btnpsndf2">Hapus</button>
+                      <button onClick={() => handleDelete(datas)} className="btnpsndf2">
+                        Hapus
+                      </button>
                     </div>
                   </div>
                 </Col>

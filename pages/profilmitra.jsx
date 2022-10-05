@@ -3,8 +3,7 @@ import Footer from "../component/footer";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
-
-
+import Router from "next/router";
 
 const ProfilMitra = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -16,27 +15,28 @@ const ProfilMitra = () => {
 
   // Get Data Profile Mitra
   const [datas, setDatas] = useState("");
+  console.log("ini get data", datas);
   console.log(datas);
 
   const getDataProfile = () => {
-  var axios = require('axios');
+    var axios = require("axios");
 
-  var config = {
-    method: 'get',
-    url: 'https://group4.altaproject.online/mitra',
-    headers: { 
-      Authorization: `Bearer ${getCookie("Token")}`,
-    }
-  };
+    var config = {
+      method: "get",
+      url: "https://group4.altaproject.online/mitra",
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`,
+      },
+    };
 
-  axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-      setDatas(response.data.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setDatas(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
@@ -56,28 +56,28 @@ const ProfilMitra = () => {
     console.log("file", selectedFile);
 
     const clickEdit = () => {
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("password", address);
-    formData.append("address", phone);
-    formData.append("phone", password);
-    formData.append("role", "mitra");
-    formData.append("photo", selectedFile);
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", address);
+      formData.append("address", phone);
+      formData.append("phone", password);
+      formData.append("role", "mitra");
+      formData.append("photo", selectedFile);
 
-    const config = {
-      headers: { Authorization: `Bearer ${getCookie("Token")}` },
+      const config = {
+        headers: { Authorization: `Bearer ${getCookie("Token")}` },
       };
 
-    axios
-      .put(`https://group4.altaproject.online/mitra`, formData, config)
-      .then((res) => {
-        alert("Berhasil Unggah File");
-        window.location.reload();
-      })
-      .catch((err) => alert("Gagal Unggah File"));
+      axios
+        .put(`https://group4.altaproject.online/mitra`, formData, config)
+        .then((res) => {
+          alert("Berhasil Unggah File");
+          window.location.reload();
+        })
+        .catch((err) => alert("Gagal Unggah File"));
     };
- 
+
     return (
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton>
@@ -116,32 +116,32 @@ const ProfilMitra = () => {
     const [longitude, setLongitude] = useState("");
 
     const clickAdd = () => {
-    var axios = require('axios');
-    var data = JSON.stringify({
-      name: names,
-      address: alamat,
-      latitude: latitude,
-      longitude: longitude
-    });
-
-    var config = {
-      method: 'post',
-      url: 'https://group4.altaproject.online/gudang',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data : data
-    };
-
-    axios(config)
-      .then((response) => {
-        alert("Berhasil Update");
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        alert("Gagal Update")
-        console.log(error)
+      var axios = require("axios");
+      var data = JSON.stringify({
+        name: names,
+        address: alamat,
+        latitude: latitude,
+        longitude: longitude,
       });
+
+      var config = {
+        method: "post",
+        url: "https://group4.altaproject.online/gudang",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then((response) => {
+          alert("Berhasil Update");
+          console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+          alert("Gagal Update");
+          console.log(error);
+        });
     };
 
     return (
@@ -174,32 +174,32 @@ const ProfilMitra = () => {
     const [longitudes, setLongitudes] = useState("");
 
     const clickTambah = () => {
-      var axios = require('axios');
+      var axios = require("axios");
       var data = JSON.stringify({
         name: namas,
         address: alamats,
         latitude: latitudes,
-        longitude: longitudes
-    });
-
-    var config = {
-      method: 'put',
-      url: 'https://group4.altaproject.online/gudang',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data : data
-    };
-
-    axios(config)
-      .then((response) => {
-        alert("Berhasil Update");
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        alert("Gagal Update")
-        console.log(error)
+        longitude: longitudes,
       });
+
+      var config = {
+        method: "put",
+        url: "https://group4.altaproject.online/gudang",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then((response) => {
+          alert("Berhasil Update");
+          console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+          alert("Gagal Update");
+          console.log(error);
+        });
     };
 
     return (
@@ -223,9 +223,20 @@ const ProfilMitra = () => {
     );
   }
   // akhir modal edit gudang mitra
+
+  // go daftar lahan
+  const goDaftarLahan = (datas) => {
+    Router.push({
+      pathname: "/daftarlahan",
+      query: {
+        gudangID: datas.gudangid,
+      },
+    });
+  };
+
   return (
     <div>
-      <NavbarMitra  />
+      <NavbarMitra />
       <Row className="min-vh-100 gx-0">
         <Col lg={4}>
           <div className="marginnav">
@@ -234,7 +245,9 @@ const ProfilMitra = () => {
         </Col>
         <Col lg={8}>
           <div className="tambahgd">
-            <button className="btntambah" onClick={() => setModalShoww(true)} >Tambah Gudang</button>
+            <button className="btntambah" onClick={() => setModalShoww(true)}>
+              Tambah Gudang
+            </button>
             <TambahGudang show={modalShoww} onHide={() => setModalShoww(false)} />
           </div>
           <div className="profright">
@@ -250,19 +263,24 @@ const ProfilMitra = () => {
             <span className="none">.</span>
           </div>
         </Col>
-          <div className="profright2">
+        <div className="profright2">
+          <div>
             <h3>Profil Gudang</h3>
-            <p>Nama: {datasGudang.name}</p>
-            <p>Alamat: {datasGudang.address}</p>
-            <p>Lokasi Gudang : </p>
-            <div className="lokmap"></div>
-            <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
-              Edit
+            <button type="submit" onClick={() => goDaftarLahan(datas)}>
+              Lihat Lahan Saya
             </button>
-            <ProfileGudang show={modalShowww} onHide={() => setModalShowww(false)} />
-
-            <span className="none">.</span>
           </div>
+          <p>Nama: {datasGudang.name}</p>
+          <p>Alamat: {datasGudang.address}</p>
+          <p>Lokasi Gudang : </p>
+          <div className="lokmap"></div>
+          <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
+            Edit
+          </button>
+          <ProfileGudang show={modalShowww} onHide={() => setModalShowww(false)} />
+
+          <span className="none">.</span>
+        </div>
       </Row>
       <Footer />
     </div>

@@ -54,7 +54,7 @@ const RegisterClient = () => {
             <Form.Control onChange={(e) => setAddress(e.target.value)} type="text" placeholder="Address" />
           </Form.Group>
           <Form.Group className="mb-2">
-            <Form.Control onChange={(e) => setPhone(e.target.value)} type="text" placeholder="No.Handphone" />
+            <Form.Control onChange={(e) => setPhone(e.target.value)} type="number" placeholder="No.Handphone" />
           </Form.Group>
           <Form.Group className="mb-2">
             <Form.Control required onChange={(e) => setEmail(e.target.value)} type="email" placeholder=" Masukan Email" />
