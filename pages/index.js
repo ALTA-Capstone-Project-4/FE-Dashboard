@@ -31,7 +31,7 @@ const index = () => {
     <div className='min-vh-100'>
       <NavbarComp/>
       <Container className='land'>
-        <div className='selm'>
+        <div className='selm' id="beranda">
           <Row>
             <Col sm="6">
               <h1 className='title'>Selamat datang di Warehouse</h1>
@@ -45,7 +45,8 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div className='selm' id="menjadi-mitra">
+
+        <div className='selm' id='mitra'>
           <Row>
             <Col sm="6">
               <Image src={imgmitra} width="450px" height="350px" />
@@ -59,7 +60,8 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div className='divpen' >
+
+        <div className='divpen' id='penitip'>
           <Row>
             <Col sm="8">
             <h1 className='title text-end'  >Titipkan Barangmu!</h1>
@@ -73,7 +75,8 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div className='accor' >
+
+        <div className='accor' id='about'>
           <div>
           <h1 className='title text-center'>Tentang Kami</h1>
           </div>
