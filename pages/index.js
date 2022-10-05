@@ -45,35 +45,35 @@ const index = () => {
             </Col>
           </Row>
         </div>
-        <div className='selm'>
+        <div className='selm' id="menjadi-mitra">
           <Row>
             <Col sm="6">
               <Image src={imgmitra} width="450px" height="350px" />
             </Col>
-            <Col sm="6">
-              <h1 className='title'>Jadi Mitra</h1>
+            <Col sm="6" >
+              <h1 className='title' >Jadi Mitra</h1>
               <h4 className='sub-title'>Sebagai Mitra, cukup posting tempat penitipan dan berikan deskripsi tempat penitipan.</h4>
               <div className='mitra1'>
-                <button type="button" className='btn1' onClick={registermitra}>Jadi Mitra</button>
+                <button type="button" className='btn1' onClick={registermitra} id="menjadi-client">Jadi Mitra</button>
               </div>
             </Col>
           </Row>
         </div>
-        <div className='divpen'>
+        <div className='divpen' >
           <Row>
             <Col sm="8">
-            <h1 className='title text-end'>Titipkan Barangmu!</h1>
+            <h1 className='title text-end'  >Titipkan Barangmu!</h1>
             <h4 className='sub-title text-end'>Mulai titipkan barangmu, nikmati fitur menarik yang tersedia di Warehouse kami!</h4>
             <div className='penitip1'>
-            <button type='button' className='btn2' onClick={registerclient}>Jadi Penitip</button>
+            <button type='button' className='btn2' onClick={registerclient} id="tentang-kami">Jadi Penitip</button>
             </div>
             </Col>
-            <Col sm="4">
+            <Col sm="4" >
               <Image src={imgpenitip} width="342px" height="342px" className='imgpen' />
             </Col>
           </Row>
         </div>
-        <div className='accor'>
+        <div className='accor' >
           <div>
           <h1 className='title text-center'>Tentang Kami</h1>
           </div>
