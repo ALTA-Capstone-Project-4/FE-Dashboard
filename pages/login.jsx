@@ -38,7 +38,7 @@ const Login = () => {
 
         {(response.data.data.role) === "admin" ? Router.push("/adminverification") :
         (response.data.data.role) === "mitra" ? Router.push({pathname:"/profilmitra", query: { name: (response.data.data.name)}}) :
-        (response.data.data.role) === "client" ? Router.push("/home") : null}
+        (response.data.data.role) === "penitip" ? Router.push("/home") : null}
 
         // Router.push({
         //   pathname: "/dashboard/detail",
