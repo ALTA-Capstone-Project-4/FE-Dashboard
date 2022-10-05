@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
+import dynamic from "next/dynamic";
 
 const DetailMitra = () => {
   const router = useRouter();
   const [ detailMitra, setDetailMitra ] = useState([]);
+  const NavbarAdmin = dynamic(() => import("../component/navbar-admin"), {
+    ssr: false,
+  });
 
   const getDetailMitra = () => {
     axios
@@ -29,7 +32,7 @@ const DetailMitra = () => {
 
   return (
     <div className="contendetailmitra">
-      <Navbarr />
+      <NavbarAdmin />
       <Row className="gx-0">
         <Col lg={4} className="p-0">
           <div className="fotomit marginnav">

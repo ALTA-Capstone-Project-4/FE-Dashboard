@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import Footer from "../component/footer";
-import NavbarComp from "../component/navbarcomp";
 import { getCookie } from "cookies-next";
 import axios from "axios";
 import Router from "next/router";
+import dynamic from "next/dynamic";
 
 const addlahan = () => {
+  const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
+    ssr: false,
+  });
+
   const [nama, setNama] = useState("");
   const [luas, setLuas] = useState("");
   const [panjang, setPanjang] = useState("");
@@ -44,7 +48,7 @@ const addlahan = () => {
 
   return (
     <div>
-      <NavbarComp />
+      <NavbarMitra />
       <Row className="gx-0 min-vh-100 addlahan">
         <Col lg={2}>
           <div className="sdbr">

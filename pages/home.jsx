@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { getCookie } from "cookies-next";
 import Router from "next/router";
 import axios from "axios";
-import NavbarClient from "../component/navbar-client";
+import dynamic from "next/dynamic";
 
 
 // export const getServerSideProps = async () => {
@@ -27,6 +27,10 @@ import NavbarClient from "../component/navbar-client";
 
 const Home = () => {
   const [datas, setDatas] = useState([]);
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
+
 
   useEffect(() => {
     getHome();

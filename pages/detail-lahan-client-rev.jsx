@@ -1,10 +1,14 @@
-import NavbarComp from "../component/navbarcomp"
 import Footer from "../component/footer"
+import dynamic from "next/dynamic"
 
 const DetailLahanClient = () => {
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
+  
   return (
     <div>
-      <NavbarComp/>
+      <NavbarClient/>
       <div className="container after-navbar pb-5">
         <p className="text-center green-font fs-2 fw-bold">Lahan 1</p>
         <div className="pb-5 pt-3">

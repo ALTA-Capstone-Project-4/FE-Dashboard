@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Footer from "../component/footer";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { getCookie } from "cookies-next";
-// import NavbarMitra from "../component/navbar-mitra";
 import dynamic from "next/dynamic";
 
 
@@ -14,11 +13,6 @@ const ProfilMitra = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
-  
-  
-  // const Table = dynamic(() => import("/design-systems/Molecules/Table"), {
-  //   ssr: false,
-  //   });
 
   // Get Data Profile Mitra
   const [datas, setDatas] = useState("");

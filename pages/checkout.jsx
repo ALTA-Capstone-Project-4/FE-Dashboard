@@ -1,12 +1,18 @@
 import React from "react";
-import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 import { Row, Col, Form } from "react-bootstrap";
+import dynamic from "next/dynamic";
 
 const Checkout = () => {
+
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
+
+
   return (
     <div>
-      <Navbarr />
+      <NavbarClient />
       <h3 className="favoritsaya marginnav">Transaksi</h3>
       <Row className="gx-0">
         <Col lg={4} className="mb-4">
@@ -48,7 +54,7 @@ const Checkout = () => {
                 <Form.Select aria-label="Default select example">
                   <option>Metode Pembayaran</option>
                   <option value="BCA">BCA Transfer</option>
-                  <option value="Mandiri">Mandiri Transfer</option>
+                  <option value="BRI">BRI Transfer</option>
                   <option value="BNI">BNI Transfer</option>
                 </Form.Select>
               </Col>
