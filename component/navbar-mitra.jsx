@@ -3,12 +3,15 @@ import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { deleteCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
 
-const NavbarMitra = ({name}) => {
+
+const NavbarMitra = () => {
+  const name = getCookie("Name")
 
   const logout = () => {
     deleteCookie("Token");
+    deleteCookie("Name");
     alert("berhasil logout")
   }
 
@@ -32,21 +35,24 @@ const NavbarMitra = ({name}) => {
             <Nav
             style={{ maxHeight: '100px' }}
             navbarScroll>
-              <Nav.Link href="#home"><p className="yellow-font-hover">Beranda</p></Nav.Link>
+              <Nav.Link href="#home"><p className="yellow-font-hover">Beranda </p></Nav.Link>
               <Nav.Link href="#menjadi-mitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
               <Nav.Link href="#tentang-kami"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
               <Nav.Link><FontAwesomeIcon icon={faUserCircle} size="xl" className="yellow-font"/></Nav.Link>
-                <NavDropdown  title={<span className="yellow-font-hover" alignRight>Hello, {name}Pemilik Gudang</span>}>
-                  <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Daftar Lahan</NavDropdown.Item>
+                <NavDropdown  title={<span className="yellow-font-hover" alignRight>Hello, {name} </span>}>
+                  <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Daftar Lahan   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.1" className="yellow-font-hover fw-semibold">Gudang Saya</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/profilmitra" className="yellow-font-hover fw-semibold" >Akun</NavDropdown.Item>
                   <NavDropdown.Item href="/" className="yellow-font-hover fw-semibold" onClick={logout}>Keluar</NavDropdown.Item>
+                  
                 </NavDropdown>
+                
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      
     </div>
   )
 }

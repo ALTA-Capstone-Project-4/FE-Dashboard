@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import NavbarAdmin from "../component/navbar-admin";
 import Footer from "../component/footer";
 import { Row, Col } from "react-bootstrap";
 import Router from "next/router";
 import { getCookie } from "cookies-next";
 import axios from "axios";
+import dynamic from "next/dynamic";
 
 const adminverification = () => {
   const [verifMitra, setVerifMitra] = useState([]);
   const [listMitra, setListMitra] = useState([]);
+  const NavbarAdmin = dynamic(() => import("../component/navbar-admin"), {
+    ssr: false,
+  });
 
   const goDetail = (user) => {
   Router.push({

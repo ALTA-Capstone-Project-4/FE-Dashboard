@@ -1,14 +1,15 @@
-
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import NavbarComp from "../component/navbarcomp";
-import Sidebar from "../component/sidebar";
 import Footer from "../component/footer";
 import Router from "next/router";
 import { getCookie } from "cookies-next";
+import dynamic from "next/dynamic";
 
 const DaftarLahan = () => {
   const [datas, setDatas] = useState([]);
+  const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
+    ssr: false,
+  });
 
   useEffect(() => {
     getLahan();

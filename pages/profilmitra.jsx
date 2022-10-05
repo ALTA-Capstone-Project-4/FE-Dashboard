@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../component/footer";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
-import { getCookie, setCookie } from "cookies-next";
-import NavbarMitra from "../component/navbar-mitra";
-import { useRouter } from "next/router";
+import { getCookie } from "cookies-next";
+import dynamic from "next/dynamic";
+
+
 
 const ProfilMitra = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShoww, setModalShoww] = React.useState(false);
   const [modalShowww, setModalShowww] = React.useState(false);
-  const router = useRouter();
+  const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
+    ssr: false,
+  });
 
   // Get Data Profile Mitra
   const [datas, setDatas] = useState("");
@@ -222,7 +225,7 @@ const ProfilMitra = () => {
   // akhir modal edit gudang mitra
   return (
     <div>
-      <NavbarMitra name={router.query.name} />
+      <NavbarMitra  />
       <Row className="min-vh-100 gx-0">
         <Col lg={4}>
           <div className="marginnav">

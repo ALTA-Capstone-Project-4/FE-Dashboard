@@ -1,13 +1,17 @@
 import React from 'react';
-import { Col, Row, Accordion, Container } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import Footer from '../component/footer';
-import NavbarComp from '../component/navbarcomp';
 import Sidebar from '../component/sidebar';
+import dynamic from 'next/dynamic';
 
 const detailgudang = () => {
+    const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
+        ssr: false,
+      });
+
   return (
     <div>
-        <NavbarComp />
+        <NavbarMitra />
         <Row className="gx-0  min-vh-100 cont">
             <Col lg={4}>
                 <div className="sdbr">

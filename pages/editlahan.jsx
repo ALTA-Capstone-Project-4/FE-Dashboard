@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import ComEditLahan from "../component/comeditlahan";
 import Footer from "../component/footer";
-import NavbarComp from "../component/navbarcomp";
+import dynamic from "next/dynamic";
 
 const editlahan = () => {
+  const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
+    ssr: false,
+  });
+
   const [nama, setNama] = useState("");
   const [luas, setLuas] = useState("");
   const [panjang, setPanjang] = useState("");
@@ -42,7 +46,7 @@ const editlahan = () => {
 
   return (
     <div>
-      <NavbarComp />
+      <NavbarMitra />
       <Row className="gx-0 min-vh-100 addlahan">
         <Col lg={2}>
           <div className="sdbr">

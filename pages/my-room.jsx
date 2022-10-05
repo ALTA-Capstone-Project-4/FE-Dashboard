@@ -1,12 +1,16 @@
-import NavbarComp from "../component/navbarcomp"
 import Footer from "../component/footer"
 import Sidebarr from "../component/sidebarr"
+import dynamic from "next/dynamic"
 
 
 const MyRoom = () => {
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
+
   return (
     <div>
-        <NavbarComp/>
+        <NavbarClient/>
         <div className="container-fluid row d-flex after-navbar">
         <div className="col-xl-4">
             <Sidebarr/>

@@ -2,11 +2,16 @@ import React from "react";
 import Navbarr from "../component/navbarcomp";
 import { Accordion, Row, Col } from "react-bootstrap";
 import Home from "../component/mapgoogle";
+import dynamic from "next/dynamic";
 
 const DetailLahanClient = () => {
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
+
   return (
     <div>
-      <Navbarr />
+      <NavbarClient />
       <h3 className="text-center marginnav">Nama Gudang</h3>
       <div className="contenaccor">
         <Accordion defaultActiveKey="0">

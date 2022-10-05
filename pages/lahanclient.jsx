@@ -4,10 +4,14 @@ import { Accordion, Row, Col } from "react-bootstrap";
 import Home from "../component/mapgoogle";
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
+import dynamic from "next/dynamic";
 
 const DetailLahanClient = () => {
   const router = useRouter();
   const data = router.query;
+  const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
 
   const [datas, setDatas] = useState([]);
 
@@ -38,7 +42,7 @@ const DetailLahanClient = () => {
   return (
     <div>
       <div>
-        <Navbarr />
+        <NavbarClient />
       </div>
       <div className="wrpctn">
         <div>
