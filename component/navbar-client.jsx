@@ -21,7 +21,7 @@ const NavbarClient = () => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        className="shadow-sm p-3  bg-body rounded fw-semibold"
+        className="shadow-sm p-3  bg-body rounded fw-semibold fixed-top"
       >
         <Container className="px-0">
           <Navbar.Brand href="/home">

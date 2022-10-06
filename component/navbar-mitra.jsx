@@ -35,7 +35,6 @@ const NavbarMitra = () => {
             <Nav
             style={{ maxHeight: '100px' }}
             navbarScroll>
-              <Nav.Link href="/home"><p className="yellow-font-hover">Beranda </p></Nav.Link>
               <Nav.Link href="/registermitra"><p className="yellow-font-hover">Menjadi Mitra</p></Nav.Link>
               <Nav.Link href="/"><p className="yellow-font-hover">Tentang Kami</p></Nav.Link>
               <Nav.Link><FontAwesomeIcon icon={faUserCircle} size="xl" className="yellow-font"/></Nav.Link>
