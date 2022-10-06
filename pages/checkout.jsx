@@ -101,7 +101,7 @@ const Checkout = () => {
               </Col>
             </Row>
             <div className="gas">
-              <h5 className="total">Total : Rp.</h5>
+              {/* <h5 className="total">Total : Rp.</h5> */}
               <button className="btnpsna" onClick={handleCheckout}>Pesan</button>
             </div>
           </div>
