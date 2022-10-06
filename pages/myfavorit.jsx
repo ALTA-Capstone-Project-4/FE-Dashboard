@@ -48,11 +48,11 @@ const MyFavorit = () => {
     });
   };
 
-  const handleDelete = ({ id }) => {
+  const clickDelete = (datas) => {
     var axios = require("axios");
     var config = {
       method: "delete",
-      url: `https://group4.altaproject.online/favorite/${id}`,
+      url: `https://group4.altaproject.online/favorite/${datas.ID}`,
       headers: {
         Authorization: `Bearer ${getCookie("Token")}`,
       },
@@ -60,10 +60,12 @@ const MyFavorit = () => {
 
     axios(config)
       .then(function (response) {
-        getData();
+        alert("Berhasil Dihapus")
+        getFavorite();
       })
       .catch(function (error) {
         console.log(error);
+        alert("Gagal Hapus")
       });
   };
 
@@ -83,7 +85,7 @@ const MyFavorit = () => {
                 <p className="txtmf">{datas.LahanHarga}</p>
                 <div className='btndf'>
                   <button className="btnpsndf" onClick={clickPesan}>Pesan</button>
-                  <button className="btnpsndf2" onClick={() => handleDelete(datas)}>Hapus</button>
+                  <button className="btnpsndf2" onClick={() => clickDelete(datas)}>Hapus</button>
                 </div>
               </div>
             </Col>
