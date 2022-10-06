@@ -4,7 +4,6 @@ import Home from "../component/mapgoogle";
 import Router, { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
-import Router from "next/router";
 
 const DetailLahanClient = () => {
   const router = useRouter();
