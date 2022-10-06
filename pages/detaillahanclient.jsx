@@ -1,88 +1,76 @@
-import React from "react";
-import Navbarr from "../component/navbarcomp";
-import { Accordion, Row, Col } from "react-bootstrap";
-import Home from "../component/mapgoogle";
-import dynamic from "next/dynamic";
+import Footer from "../component/footer"
+import dynamic from "next/dynamic"
+import { useRouter } from "next/router";
+import axios from "axios";
+import { getCookie } from "cookies-next";
+import { useEffect, useState } from "react";
 
 const DetailLahanClient = () => {
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
     ssr: false,
   });
+  const router = useRouter();
+  const [detail, setDetail] = useState([]);
 
+  const getDetail = () => {
+    axios
+    .get(`https://group4.altaproject.online/lahan/${router.query.lahan_id}`, {
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`
+      }
+    })
+    .then((response) => {
+      setDetail(response.data.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
+  useEffect(() => {
+    getDetail();
+  }, []);
+  
   return (
     <div>
-      <NavbarClient />
-      <h3 className="text-center marginnav">Nama Gudang</h3>
-      <div className="contenaccor">
-        <Accordion defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
-            <Accordion.Body>
-              <Row>
-                <Col lg={8}>
-                  <div>
-                    <p>Luas : 2m x 2m</p>
-                    <p>Panjang : 15m</p>
-                    <p>
-                      Barang yang tidak diijinkan: <br />
-                      Benda yang dilarang oleh Undang-Undang
-                    </p>
-                    <p>
-                      Tentang Lahan : <br />
-                      Berbentuk Ruangan bisa dikunci, Khusus Penyimpanan Dokumen
-                    </p>
-                    <p>
-                      Fasilitas: <br />
-                      -Security <br />
-                      -Listrik <br />
-                      -Area Parkir <br />
-                      -Sumber Air
-                    </p>
-                  </div>
-                </Col>
-                <Col lg={4}>
-                  <div className="detpic"></div>
-                  <h3>Rp.1.200.000</h3>
-                  <button className="btnpsnan">Pesan</button>
-                </Col>
-              </Row>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Accordion Item #2</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-        <Row>
-          <Col lg={6}>
-            <div>
-              <h5 className="mt-5">Lokasi :</h5>
-              <div className="lokgud">
-                <Home />
+      <NavbarClient/>
+      <div className="container after-navbar pb-5">
+        <p className="text-center green-font fs-2 fw-bold">{detail.nama}</p>
+        <div className="pb-5 pt-3">
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <p className="fs-4">Spesifikasi Lahan</p>
+            <div className="row">
+              <div className="col">
+                <p>Luas</p>
+                <p>Panjang</p>
+                <p>Lebar</p>
+              </div>
+              <div className="col-12 col-md-6">
+                <p>: {detail.luas} m<sup>2</sup></p>
+                <p>: {detail.panjang} m</p>
+                <p>: {detail.lebar} m</p>
               </div>
             </div>
-          </Col>
-          <Col lg={6}>
-            <div>
-              <Row>
-                <Col>
-                  <h5 className="mt-5">Nama Mitra :</h5>
-                </Col>
-                <Col>
-                  <div className="mt-5">
-                    <button className="btnpsnan">Whatsapp</button>
-                  </div>
-                </Col>
-              </Row>
+            <p className="fs-4 pt-4">Tentang Lahan</p>
+            <p>{detail.deskripsi}</p>
+            <p className="fs-4 pt-4">Barang Yang Tidak Diijinkan dalam Penitipan</p>
+            <p>{detail.barang_tdk_diizinkan}</p>
+            <p className="fs-4 pt-4">Fasilitas</p>
+            <p>{detail.fasilitas}</p>
+          </div>
+          <div className="col">
+            <div className="d-flex justify-content-center">
+              <img src={detail.foto_lahan} className="img-fluid" style={{ height: "16rem"}}/>
             </div>
-          </Col>
-        </Row>
+            <p className="text-center fs-4 green-font">Rp. {detail.harga}</p>
+          </div>
+        </div>
       </div>
+      <Footer/>
     </div>
-  );
-};
+  )
+}
 
-export default DetailLahanClient;
+export default DetailLahanClient

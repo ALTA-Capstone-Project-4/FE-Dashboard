@@ -42,7 +42,7 @@ const MyRoom = () => {
             <div className="col m-2">
               <img src="https://lzd-img-global.slatic.net/g/p/aebf69ac76a0abf0b3e05f42864b8dc2.jpg_720x720q80.jpg_.webp" className="img-fluid" style={{ height: "16rem"}}/>
             </div>
-            <div className="col black-font">
+            <div className="col  black-font">
               <p className="fs-4 fw-semibold green-font">{item.nama_lahan}</p>
               <p className="pt-1">Luas: {item.luas_lahan}</p>
               <p>Address: {item.alamat_gudang}</p>
@@ -50,7 +50,7 @@ const MyRoom = () => {
               <p>Tanggal Mulai Sewa: {item.mulai_sewa}</p>
               <p>Tanggal Akhir Sewa: {item.akhir_sewa}</p>
             </div>
-            <div className="col black-font">
+            <div className="col  black-font">
               <p className="fs-4 fw-semibold green-font">Barang Yang disimpan</p>
               <p className="pt-1"> Nama: {item.nama_barang}</p>
               <div className="pt-4 white-font text-center">

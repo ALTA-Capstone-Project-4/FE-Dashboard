@@ -110,6 +110,15 @@ const DaftarLahan = () => {
       });
   };
 
+  const detail = (datas) => {
+    Router.push({
+      pathname:("/detaillahanclient"),
+      query:{
+        lahan_id: datas.ID
+      }
+    })
+  }
+
   return (
     <div>
       <NavbarMitra />
@@ -129,7 +138,7 @@ const DaftarLahan = () => {
               return (
                 <Col key={index}>
                   <div className="cardfav">
-                    <img className="gambarfav" src={datas.FotoLahan} />
+                    <img className="gambarfav" src={datas.FotoLahan} onClick={() => detail(datas)}/>
                     <p className="txtmf">{datas.Nama}</p>
                     <p className="txtmf">{datas.Harga}</p>
                     <div className="btndf">

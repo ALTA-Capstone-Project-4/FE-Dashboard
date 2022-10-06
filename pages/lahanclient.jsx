@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Accordion, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Home from "../component/mapgoogle";
 import Router, { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
+import Footer from "../component/footer";
 
-const DetailLahanClient = () => {
+const LahanClient = () => {
   const router = useRouter();
   const data = router.query;
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
@@ -49,8 +50,6 @@ const DetailLahanClient = () => {
       lahan_id: parseInt(`${datas.ID}`),
     });
 
-    console.log("baseng", datas)
-
     var config = {
       method: "post",
       url: `https://group4.altaproject.online/favorite`,
@@ -93,12 +92,21 @@ const DetailLahanClient = () => {
     })
   }
 
+  const detail = (datas) => {
+    Router.push({
+      pathname:("/detaillahanclient"),
+      query:{
+        lahan_id: datas.ID
+      }
+    })
+  }
+
   return (
     <div>
       <div>
         <NavbarClient />
       </div>
-      <div className="wrpctn">
+      <div className="wrpctn py-5">
         <div>
           <h3 className="mb-4 mcj">{data.nama}</h3>
         </div>
@@ -125,12 +133,12 @@ const DetailLahanClient = () => {
         </div>
         <div>
           <Row>
-            {datas.map((datas, index) => {
+            {datas?.map((datas, index) => {
               return (
                 <Col>
-                  <div key={index} className="crdlhn">
+                  <div key={index} className="crdlhn" >
                     <div>
-                      <img className="imglhnn" src={datas.FotoLahan} />
+                      <img className="imglhnn" src={datas.FotoLahan} onClick={() => detail(datas)} />
                     </div>
                     <div>
                       <div>
@@ -138,6 +146,7 @@ const DetailLahanClient = () => {
                           <Col>
                             <p>{datas.Nama}</p>
                             <p>{datas.Harga}</p>
+                           
                           </Col>
                           <Col>
                             <p>{datas.Panjang}</p>
@@ -163,8 +172,9 @@ const DetailLahanClient = () => {
           </Row>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
 
-export default DetailLahanClient;
+export default LahanClient;
