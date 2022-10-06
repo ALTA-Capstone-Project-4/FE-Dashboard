@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Navbarr from "../component/navbarcomp";
 import { Accordion, Row, Col } from "react-bootstrap";
 import Home from "../component/mapgoogle";
 import Router, { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
+import Router from "next/router";
 
 const DetailLahanClient = () => {
   const router = useRouter();
@@ -19,7 +19,6 @@ const DetailLahanClient = () => {
   useEffect(() => {
     getLahangudang();
   }, []);
-  console.log("ini get datas", datas);
 
   const getLahangudang = () => {
     var axios = require("axios");
@@ -82,6 +81,19 @@ const DetailLahanClient = () => {
   //   });
   // };
 
+  const checkout = (datas) => {
+    Router.push({
+      pathname:("/checkout"),
+      query: {
+        lahan_id: datas.ID,
+        foto_lahan: datas.FotoLahan,
+        gudang: datas.Nama_Gudang,
+        harga: datas.Harga,
+        lahan: datas.Nama
+      }
+    })
+  }
+
   return (
     <div>
       <div>
@@ -140,7 +152,7 @@ const DetailLahanClient = () => {
                             <button className="btnfav" onClick={() => goFavo(datas)}>Favorit</button>
                           </Col>
                           <Col sm={9}>
-                            <button className="btnnpsn" onClick={() => goOrder()}>Pesan</button>
+                            <button className="btnnpsn" onClick={() => checkout(datas)}>Pesan</button>
                           </Col>
                         </Row>
                       </div>

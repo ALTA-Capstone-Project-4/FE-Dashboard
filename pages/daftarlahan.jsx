@@ -102,7 +102,7 @@ const DaftarLahan = () => {
     axios(config)
       .then(function (response) {
         alert("berhasil dihapus");
-        Router.push("/profilmitra");
+        getLahan();
       })
       .catch(function (error) {
         console.log(error);
@@ -125,7 +125,7 @@ const DaftarLahan = () => {
             </button>
           </div>
           <Row className="contenmyfav">
-            {datas.map((datas, index) => {
+            {datas?.map((datas, index) => {
               return (
                 <Col key={index}>
                   <div className="cardfav">
