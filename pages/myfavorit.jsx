@@ -3,13 +3,18 @@ import Footer from "../component/footer";
 import { Row, Col } from "react-bootstrap";
 import Router from "next/router";
 import dynamic from "next/dynamic";
+import { getCookie } from "cookies-next";
 
 const MyFavorit = () => {
-  const [datas, setDatas] = useState("");
+  const [datas, setDatas] = useState([]);
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
     ssr: false,
   });
 
+  useEffect(() => {
+    getFavorite();
+  }, []);
+  console.log(datas);
   const getFavorite = () => {
     var axios = require('axios');
 
@@ -29,10 +34,6 @@ const MyFavorit = () => {
       .catch(function (error) {
         console.log(error);
       });
-
-      useEffect(() => {
-        getFavorite();
-      }, []);
   }
 
   const clickPesan = (datas) => {
@@ -70,8 +71,10 @@ const MyFavorit = () => {
     <div>
       <NavbarClient />
       <Row className="gx-0  min-vh-100">
-        <Col>
-          <h3 className="favoritsaya marginnav">Favorit Saya</h3>
+      <h3 className="favoritsaya marginnav">Favorit Saya</h3>
+        {datas.map((datas, index) => {
+          return (
+            <Col key={index}>
           <Row className="contenmyfav">
             <Col>
               <div className="cardfav">
@@ -86,6 +89,9 @@ const MyFavorit = () => {
             </Col>
           </Row>
         </Col>
+          )
+        })}
+        
       </Row>
 
       <Footer />
