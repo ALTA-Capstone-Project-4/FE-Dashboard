@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Accordion, Row, Col } from "react-bootstrap";
 import Home from "../component/mapgoogle";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
 import Router from "next/router";
@@ -14,6 +14,7 @@ const DetailLahanClient = () => {
   });
 
   const [datas, setDatas] = useState([]);
+  console.log(datas);
 
   useEffect(() => {
     getLahangudang();
@@ -38,6 +39,47 @@ const DetailLahanClient = () => {
         console.log(error);
       });
   };
+
+  // useEffect(() => {
+  //   getFavorite();
+  // }, []);
+ 
+  const goFavo = (datas) => {
+    var axios = require("axios");
+    var data = JSON.stringify({
+      lahan_id: parseInt(`${datas.ID}`),
+    });
+
+    console.log("baseng", datas)
+
+    var config = {
+      method: "post",
+      url: `https://group4.altaproject.online/favorite`,
+      headers: {
+        Authorization: `Bearer ${getCookie("Token")}`,
+        'Content-Type': 'application/json'
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then((response) => {
+        Router.push ("/myfavorit");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // const goFavo = (datas) => {
+  //   console.log("ini input diklik", datas.ID);
+  //   Router.push({
+  //     pathname: "/myfavorit",
+  //     query: {
+  //       lahan_id: datas.ID,
+  //     },
+  //   });
+  // };
 
   const checkout = (datas) => {
     Router.push({
@@ -107,7 +149,7 @@ const DetailLahanClient = () => {
                       <div>
                         <Row>
                           <Col sm={3}>
-                            <button className="btnfav">Favorit</button>
+                            <button className="btnfav" onClick={() => goFavo(datas)}>Favorit</button>
                           </Col>
                           <Col sm={9}>
                             <button className="btnnpsn" onClick={() => checkout(datas)}>Pesan</button>
