@@ -111,7 +111,7 @@ const adminverification = () => {
           return (
             <Row>
               <Col sm={6}>
-                <button className="btnmit black-font" type="submit">
+                <button className="btnmit black-font" type="submit" onClick={() => goDetail(user)}>
                   {user.name}
                 </button>
               </Col>

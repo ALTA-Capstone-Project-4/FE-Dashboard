@@ -106,7 +106,7 @@ const ProfilMitra = () => {
   }
   // akhir modal edit profile mitra
 
-  const [datasGudang, setDatasGudang] = useState("");
+  // const [datasGudang, setDatasGudang] = useState("");
 
   // Modal Post Tambah Gudang //
   function TambahGudang(props) {
@@ -237,10 +237,10 @@ const ProfilMitra = () => {
   return (
     <div>
       <NavbarMitra />
-      <Row className="min-vh-100 gx-0">
+      <Row className="min-vh-100 gx-0 after-navbar">
         <Col lg={4}>
           <div className="marginnav">
-            <img className="ptprfl" src="" />
+            <img className="ptprfl" src={datas.file_ktp} />
           </div>
         </Col>
         <Col lg={8}>
@@ -262,16 +262,16 @@ const ProfilMitra = () => {
             <EditProfile show={modalShow} onHide={() => setModalShow(false)} />
             <span className="none">.</span>
           </div>
-        </Col>
-        <div className="profright2">
+
+          <div className="profright2">
           <div>
             <h3>Profil Gudang</h3>
-            <button type="submit" onClick={() => goDaftarLahan(datas)}>
+            <button type="submit" className="btneditmit" onClick={() => goDaftarLahan(datas)}>
               Lihat Lahan Saya
             </button>
           </div>
-          <p>Nama: {datasGudang.name}</p>
-          <p>Alamat: {datasGudang.address}</p>
+          <p>Nama: {datas.gudangname}</p>
+          <p>Alamat: {datas.gudanglocation}</p>
           <p>Lokasi Gudang : </p>
           <div className="lokmap"></div>
           <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
@@ -281,6 +281,8 @@ const ProfilMitra = () => {
 
           <span className="none">.</span>
         </div>
+        </Col>
+        
       </Row>
       <Footer />
     </div>
