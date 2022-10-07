@@ -240,7 +240,7 @@ const ProfilMitra = () => {
       <Row className="min-vh-100 gx-0 after-navbar">
         <Col lg={4}>
           <div className="marginnav">
-            <img className="ptprfl" src={datas.file_ktp} />
+            <img className="ptprfl"  />
           </div>
         </Col>
         <Col lg={8}>

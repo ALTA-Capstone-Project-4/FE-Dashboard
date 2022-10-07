@@ -103,10 +103,10 @@ console.log("data", )
           <Row>
             {datas.map((datas, index) => {
               return (
-                <Col>
+                <Col className="pb-5">
                   <div key={index} className="col">
-                    <Card style={{ width: "18rem" }}>
-                      <Card.Img variant="top" src={datas.foto_lahan} />
+                    <Card style={{ width: "18rem"}}>
+                      <Card.Img variant="top" src={datas.foto_lahan} style={{ height: "18rem"}}/>
                       <Card.Body>
                         <Card.Text>{datas.nama}</Card.Text>
                         <Card.Text>{datas.harga}</Card.Text>
