@@ -27,6 +27,7 @@ import dynamic from "next/dynamic";
 
 const Home = () => {
   const [datas, setDatas] = useState([]);
+  const [search, setSearch] = useState(null);
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
     ssr: false,
   });
@@ -56,9 +57,6 @@ const Home = () => {
       });
   };
 
-console.log("data", )
-
-
   // go Check
   const goCheck = (datas) => {
     console.log("ini datas diklik", datas.id_lahan);
@@ -70,6 +68,17 @@ console.log("data", )
       },
     });
   };
+
+  const bySearch = (datas, search) => {
+    if (search) {
+      return datas.address.toLowerCase().includes(search.toLowerCase());
+    } else return datas;
+  }
+
+  const filteredList = (datas, search) => {
+    return datas
+    .filter(data => bySearch(data, search));
+  }
 
   return (
     <div>
@@ -89,7 +98,7 @@ console.log("data", )
           <p className="fs-2 fw-bold white-font text-center">Mau Cari Tempat Penitipan?</p>
           <div className="container">
             <InputGroup>
-              <Form.Control type="text" placeholder="Cari.." aria-label="Input group example" aria-describedby="btnGroupAddon" />
+              <Form.Control type="search" placeholder="Cari.." aria-label="Input group example" aria-describedby="btnGroupAddon" onChange={e => setSearch(e.target.value)} />
               <button className=" yellow-background-hover white-font button-search px-4 py-1 fw-bold">Cari</button>
             </InputGroup>
           </div>
@@ -101,7 +110,7 @@ console.log("data", )
       <div className="container py-5 ">
         <div className="row d-flex">
           <Row>
-            {datas.map((datas, index) => {
+            {/* {datas.map((datas, index) => {
               return (
                 <Col className="pb-5">
                   <div key={index} className="col">
@@ -110,7 +119,25 @@ console.log("data", )
                       <Card.Body>
                         <Card.Text>{datas.nama}</Card.Text>
                         <Card.Text>Rp. {(datas.harga).toLocaleString("id-ID")}</Card.Text>
+                        <Card.Text>{datas.address}</Card.Text>
                         <Button onClick={() => goCheck(datas)}>Go Check</Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </Col>
+              );
+            })} */}
+            {filteredList(datas, search).map((data, index) => {
+              return (
+                <Col className="pb-5">
+                  <div key={index} className="col">
+                    <Card style={{ width: "18rem"}}>
+                      <Card.Img variant="top" src={data.foto_lahan} style={{ height: "18rem"}}/>
+                      <Card.Body>
+                        <Card.Text>{data.nama}</Card.Text>
+                        <Card.Text>Rp. {(data.harga).toLocaleString("id-ID")}</Card.Text>
+                        <Card.Text>{data.address}</Card.Text>
+                        <Button onClick={() => goCheck(data)}>Go Check</Button>
                       </Card.Body>
                     </Card>
                   </div>

@@ -41,10 +41,6 @@ const LahanClient = () => {
         console.log(error);
       });
   };
-
-  // useEffect(() => {
-  //   getFavorite();
-  // }, []);
  
   const goFavo = (datas) => {
     var axios = require("axios");
@@ -70,16 +66,6 @@ const LahanClient = () => {
         console.log(error);
       });
   };
-
-  // const goFavo = (datas) => {
-  //   console.log("ini input diklik", datas.ID);
-  //   Router.push({
-  //     pathname: "/myfavorit",
-  //     query: {
-  //       lahan_id: datas.ID,
-  //     },
-  //   });
-  // };
 
   const checkout = (datas) => {
     Router.push({

@@ -30,7 +30,8 @@ const DetailLahanClient = () => {
   useEffect(() => {
     getDetail();
   }, []);
-  
+
+  // const price = (detail.harga).toLocaleString("id-ID");
   return (
     <div>
       <NavbarClient/>
@@ -64,7 +65,8 @@ const DetailLahanClient = () => {
             <div className="d-flex justify-content-center">
               <img src={detail.foto_lahan} className="img-fluid" style={{ height: "16rem"}}/>
             </div>
-            <p className="text-center fs-4 green-font">Rp. {(detail.harga).toLocaleString("id-ID")}</p>
+            <p className="text-center fs-4 green-font">Rp. {detail.harga}</p>
+             {/* {(detail.harga).toLocaleString("id-ID")} */}
             <div className="yellow-background text-center mt-5 mx-5">Status: {detail.status}</div>
           </div>
         </div>
