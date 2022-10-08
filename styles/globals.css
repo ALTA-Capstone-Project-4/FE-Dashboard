@@ -72,3 +72,9 @@ a {
 .after-navbar {
   margin-top: 8rem !important;
 }
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: red;
+  color: white;
+}

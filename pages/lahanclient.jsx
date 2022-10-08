@@ -14,6 +14,7 @@ const LahanClient = () => {
   });
 
   const [datas, setDatas] = useState([]);
+  const [gudang, setGudang] = useState([]);
   console.log(datas);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const LahanClient = () => {
     axios(config)
       .then(function (response) {
         setDatas(response.data.data.lahan);
+        setGudang(response.data.data)
       })
       .catch(function (error) {
         console.log(error);
@@ -108,7 +110,7 @@ const LahanClient = () => {
       </div>
       <div className="wrpctn py-5">
         <div>
-          <h3 className="mb-4 mcj">{data.nama}</h3>
+          <h3 className="mb-4 mcj">{gudang.name}</h3>
         </div>
         <div>
           <Row>
@@ -122,7 +124,7 @@ const LahanClient = () => {
         </div>
         <div>
           <Col>
-            <h5 className="mt-5">Lokasi :</h5>
+            <h5 className="mt-5">Lokasi : {gudang.address}</h5>
             <div className="lokgud">
               <Home />
             </div>
@@ -145,12 +147,12 @@ const LahanClient = () => {
                         <Row>
                           <Col>
                             <p>{datas.Nama}</p>
-                            <p>{datas.Harga}</p>
+                            <p>Rp. {(datas.Harga).toLocaleString("id-ID")}</p>
                            
                           </Col>
                           <Col>
-                            <p>{datas.Panjang}</p>
-                            <p>{datas.Lebar}</p>
+                            <p>Panjang : {datas.Panjang} m</p>
+                            <p>Lebar: {datas.Lebar} m</p>
                           </Col>
                         </Row>
                       </div>

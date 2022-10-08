@@ -30,7 +30,7 @@ function NavbarComp() {
                 <p className="yellow-font-hover">Menjadi Mitra</p>
               </Nav.Link>
               <Nav.Link href="#penitip">
-                <p className="yellow-font-hover">Menjadi Client</p>
+                <p className="yellow-font-hover">Menjadi Customer</p>
               </Nav.Link>
               <Nav.Link href="/login">
                 <p className="yellow-font-hover">Masuk</p>

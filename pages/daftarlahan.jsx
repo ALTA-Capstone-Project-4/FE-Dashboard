@@ -140,7 +140,7 @@ const DaftarLahan = () => {
                   <div className="cardfav">
                     <img className="gambarfav" src={datas.FotoLahan} onClick={() => detail(datas)}/>
                     <p className="txtmf">{datas.Nama}</p>
-                    <p className="txtmf">{datas.Harga}</p>
+                    <p className="txtmf">Rp. {(datas.Harga).toLocaleString("id-ID")}</p>
                     <div className="btndf">
                       <button onClick={() => editlahan(datas)} className="btnpsndf">
                         Edit

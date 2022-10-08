@@ -3,7 +3,8 @@ import Footer from "../component/footer";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
-import Router from "next/router";
+import Router from "next/router"; 
+import axios from 'axios'
 
 const ProfilMitra = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -12,11 +13,12 @@ const ProfilMitra = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
+  // const Maps = dynamic(() => import("../component/maps"), {
+  //   ssr: false,
+  // });
 
   // Get Data Profile Mitra
   const [datas, setDatas] = useState("");
-  console.log("ini get data", datas);
-  console.log(datas);
 
   const getDataProfile = () => {
     var axios = require("axios");
@@ -73,7 +75,7 @@ const ProfilMitra = () => {
         .put(`https://group4.altaproject.online/mitra`, formData, config)
         .then((res) => {
           alert("Berhasil Unggah File");
-          window.location.reload();
+          
         })
         .catch((err) => alert("Gagal Unggah File"));
     };
@@ -245,9 +247,9 @@ const ProfilMitra = () => {
         </Col>
         <Col lg={8}>
           <div className="tambahgd">
-            <button className="btntambah" onClick={() => setModalShoww(true)}>
-              Tambah Gudang
-            </button>
+            { datas.gudangname === null ? 
+              <button className="btntambah" onClick={() => setModalShoww(true)}>Tambah Gudang</button> :
+              null }
             <TambahGudang show={modalShoww} onHide={() => setModalShoww(false)} />
           </div>
           <div className="profright">
@@ -273,7 +275,9 @@ const ProfilMitra = () => {
           <p>Nama: {datas.gudangname}</p>
           <p>Alamat: {datas.gudanglocation}</p>
           <p>Lokasi Gudang : </p>
-          <div className="lokmap"></div>
+          <div className="lokmap">
+            {/* <Maps/> */}
+          </div>
           <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
             Edit
           </button>
@@ -282,6 +286,7 @@ const ProfilMitra = () => {
           <span className="none">.</span>
         </div>
         </Col>
+        {/* <Maps/> */}
         
       </Row>
       <Footer />

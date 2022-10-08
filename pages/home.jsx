@@ -109,7 +109,7 @@ console.log("data", )
                       <Card.Img variant="top" src={datas.foto_lahan} style={{ height: "18rem"}}/>
                       <Card.Body>
                         <Card.Text>{datas.nama}</Card.Text>
-                        <Card.Text>{datas.harga}</Card.Text>
+                        <Card.Text>Rp. {(datas.harga).toLocaleString("id-ID")}</Card.Text>
                         <Button onClick={() => goCheck(datas)}>Go Check</Button>
                       </Card.Body>
                     </Card>

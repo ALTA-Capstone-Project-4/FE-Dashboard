@@ -17,11 +17,15 @@
     "bootstrap": "^5.2.1",
     "cookies-next": "^2.1.1",
     "fs": "^0.0.1-security",
+    "leaflet": "^1.9.2",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-geosearch": "^3.7.0",
     "moment": "^2.29.4",
     "next": "12.3.1",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
-    "react-dom": "18.2.0"
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "8.24.0",

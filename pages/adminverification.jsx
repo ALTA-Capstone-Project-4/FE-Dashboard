@@ -125,7 +125,7 @@ const adminverification = () => {
       </div>
       <div className="contenmitra mx-auto p-3">
         <h2>Daftar Mitra Gudang</h2>
-        {listMitra.map((user) => {
+        {listMitra?.map((user) => {
           return (
             <Row>
               <Col sm={6}>
