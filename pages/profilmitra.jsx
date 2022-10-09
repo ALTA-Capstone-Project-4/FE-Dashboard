@@ -13,9 +13,12 @@ const ProfilMitra = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
-  // const Maps = dynamic(() => import("../component/maps"), {
-  //   ssr: false,
-  // });
+  const MapsShow = dynamic(() => import("../component/maps-show"), {
+    ssr: false,
+  });
+  const Maps = dynamic(() => import("../component/maps"), {
+    ssr: false,
+  });
 
   // Get Data Profile Mitra
   const [datas, setDatas] = useState("");
@@ -61,9 +64,9 @@ const ProfilMitra = () => {
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
-      formData.append("password", address);
-      formData.append("address", phone);
-      formData.append("phone", password);
+      formData.append("password", password);
+      formData.append("address", address);
+      formData.append("phone", phone);
       formData.append("role", "mitra");
       formData.append("photo", selectedFile);
 
@@ -75,6 +78,7 @@ const ProfilMitra = () => {
         .put(`https://group4.altaproject.online/mitra`, formData, config)
         .then((res) => {
           alert("Berhasil Unggah File");
+          getDataProfile();
           
         })
         .catch((err) => alert("Gagal Unggah File"));
@@ -100,7 +104,7 @@ const ProfilMitra = () => {
           <Form.Control onChange={(e) => setSelectedFile(e.target.files[0])} type="file" placeholder="Masukan Password" />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={clickEdit}>Save</Button>
+          <Button onClick={clickEdit} >Save</Button>
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
@@ -108,14 +112,13 @@ const ProfilMitra = () => {
   }
   // akhir modal edit profile mitra
 
-  // const [datasGudang, setDatasGudang] = useState("");
-
   // Modal Post Tambah Gudang //
   function TambahGudang(props) {
     const [names, setNames] = useState("");
     const [alamat, setAlamat] = useState("");
     const [latitude, setLatitude] = useState("");
     const [longitude, setLongitude] = useState("");
+    const [location, setLocation] = useState({ lng: -6.1753942, lat: 106.827183});
 
     const clickAdd = () => {
       var axios = require("axios");
@@ -157,7 +160,19 @@ const ProfilMitra = () => {
           <Form.Label>Alamat</Form.Label>
           <Form.Control type="text" placeholder="Masukan Alamat" onChange={(e) => setAlamat(e.target.value)} />
           <Form.Label>Lokasi</Form.Label>
-          <Form.Control type="text" placeholder="Masukan Lokasi" />
+          <Maps
+            center={location}
+            location={location}
+            draggable={true}
+            title="sample text"
+            onDragMarker={(e) => {
+            console.log("e", e);
+            let loc = { lat: e.lng, lng: e.lat};
+            setLocation(loc);
+            setLatitude(e.lat);
+            setLongitude(e.lng);
+            }}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={clickAdd}>Save</Button>
@@ -174,6 +189,7 @@ const ProfilMitra = () => {
     const [alamats, setAlamats] = useState("");
     const [latitudes, setLatitudes] = useState("");
     const [longitudes, setLongitudes] = useState("");
+    const [locations, setLocations] = useState({ lng: -6.1753942, lat: 106.827183});
 
     const clickTambah = () => {
       var axios = require("axios");
@@ -215,7 +231,22 @@ const ProfilMitra = () => {
           <Form.Label>Alamat</Form.Label>
           <Form.Control type="text" placeholder="Masukan Alamat" onChange={(e) => setAlamats(e.target.value)} />
           <Form.Label>Lokasi</Form.Label>
-          <Form.Control type="text" placeholder="Masukan Lokasi" />
+          <Maps
+            center={locations}
+            location={locations}
+            draggable={true}
+            title="sample text"
+            onDragMarker={(e) => {
+            console.log("e", e);
+            let loc = { lat: e.lng, lng: e.lat};
+            setLocations(loc);
+            // setLatitudes(e.lat);
+            // setLongitudes(e.lng);
+            }}
+          />
+          {/* {"lng: " + location.lng}
+          <br/>
+          {"lat: " + location.lat} */}
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={clickTambah}>Save</Button>
@@ -236,13 +267,14 @@ const ProfilMitra = () => {
     });
   };
 
+
   return (
     <div>
       <NavbarMitra />
       <Row className="min-vh-100 gx-0 after-navbar">
         <Col lg={4}>
           <div className="marginnav">
-            <img className="ptprfl"  />
+            <img className="ptprfl" src={datas.photo}/>
           </div>
         </Col>
         <Col lg={8}>
@@ -257,7 +289,7 @@ const ProfilMitra = () => {
             <p>Email : {datas.email}</p>
             <p>Nama: {datas.name}</p>
             <p>Alamat : {datas.address}</p>
-            <p>No.Hp : {datas.email}</p>
+            <p>No.Hp : {datas.phone}</p>
             <button className="btneditmit" onClick={() => setModalShow(true)}>
               Edit
             </button>
@@ -276,18 +308,20 @@ const ProfilMitra = () => {
           <p>Alamat: {datas.gudanglocation}</p>
           <p>Lokasi Gudang : </p>
           <div className="lokmap">
-            {/* <Maps/> */}
+            <MapsShow 
+            lat={51.505}
+            long={-0.09}
+            size={{ height: "300px", width: "100%"}}
+            popup={datas.gudangname}
+            />
           </div>
           <button className="btneditmit mt-2" onClick={() => setModalShowww(true)}>
             Edit
           </button>
           <ProfileGudang show={modalShowww} onHide={() => setModalShowww(false)} />
-
           <span className="none">.</span>
         </div>
         </Col>
-        {/* <Maps/> */}
-        
       </Row>
       <Footer />
     </div>

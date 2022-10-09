@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import Home from "../component/mapgoogle";
 import Router, { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
@@ -10,6 +9,9 @@ const LahanClient = () => {
   const router = useRouter();
   const data = router.query;
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+    ssr: false,
+  });
+  const MapsShow = dynamic(() => import("../component/maps-show"), {
     ssr: false,
   });
 
@@ -112,7 +114,14 @@ const LahanClient = () => {
           <Col>
             <h5 className="mt-5">Lokasi : {gudang.address}</h5>
             <div className="lokgud">
-              <Home />
+              <MapsShow
+              // lat={gudang.latitude}
+              // long={gudang.longitude}
+              lat={-6.1753942}
+              long={106.827183}
+              size={{ height: "300px", width: "100%"}}
+              popup={gudang.name}
+              />
             </div>
           </Col>
         </div>

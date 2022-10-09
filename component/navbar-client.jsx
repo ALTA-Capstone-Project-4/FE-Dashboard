@@ -43,7 +43,7 @@ const NavbarClient = () => {
                   <NavDropdown.Item href="/myfavorit" className="yellow-font-hover fw-semibold">Favorit</NavDropdown.Item>
                   <NavDropdown.Item href="/my-room" className="yellow-font-hover fw-semibold">Daftar Lahan</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/profilclient" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
+                  <NavDropdown.Item href="/profileclient" className="yellow-font-hover fw-semibold">Akun</NavDropdown.Item>
                   <NavDropdown.Item href="/" className="yellow-font-hover fw-semibold" onClick={logout}>Keluar</NavDropdown.Item>
                 </NavDropdown>
             </Nav>

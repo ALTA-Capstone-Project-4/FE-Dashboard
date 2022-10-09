@@ -48,6 +48,11 @@ a {
   background-color: #104B0B;
 }
 
+.red-background {
+  background-color: #a00404;
+}
+
+
 .yellow-font-hover {
   color: #FA990E !important;
 }

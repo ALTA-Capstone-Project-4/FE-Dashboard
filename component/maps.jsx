@@ -25,7 +25,8 @@ const Maps = ({center, draggable, onDragMarker, location}) => {
     center={[center.lng, center.lat]}
     zoom={15}
     scrollWheelZoom={false}
-    style={{ height:"200px", width:"100%" }}
+    style={{ height:"300px", width:"100%" }}
+    
     >
     <TileLayer
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -34,6 +34,7 @@ const RegisterMitra = () => {
     .catch((err) => alert("gagal register"))
   };
 
+  
 
   return (
     <div>
@@ -61,16 +62,16 @@ const RegisterMitra = () => {
           </Col>
           <Col sm={6}>
             <div className="upld">
-              <input  type="file" onChange={(e) => setFile_ktp(e.target.files[0])}></input>
-
-              <div className="boxktp"></div>
+              <input id="imgInp" type="file" onChange={(e) => setFile_ktp(e.target.files[0])}></input>
+              {/* <div className="boxktp">
+              </div> */}
             </div>
           </Col>
         </Row>
 
         <div className="btnreg">
           <div className="text-muted text-center mt-3">By logging in, you agree to WareHouse Privacy Policy and Terms of Use</div>
-          <button className="buttonloginm mt-2" type="submit" onClick={clickregis}>
+          <button className="buttonloginm mt-2 rounded" type="submit" onClick={clickregis}>
             Register
           </button>
           <p className="plog text-center mt-1">

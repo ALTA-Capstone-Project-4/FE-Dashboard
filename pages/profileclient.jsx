@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, Modal, Form, Button } from "react-bootstrap";
-import Navbarr from "../component/navbarcomp";
 import Footer from "../component/footer";
 import axios from "axios";
 import { getCookie } from "cookies-next";
 import Router from "next/router";
+import dynamic from "next/dynamic";
+const NavbarClient = dynamic(() => import("../component/navbar-client"), {
+  ssr: false,
+});
 
 const ProfileClient = () => {
   const [modalShow, setModalShow] = React.useState(false);
-
   const [dataprofile, setDataprofile] = useState("");
 
   useEffect(() => {
@@ -132,8 +134,8 @@ const ProfileClient = () => {
 
   return (
     <div>
-      <Navbarr />
-      <Row className="min-vh-100 gx-0">
+      <NavbarClient />
+      <Row className="min-vh-100 gx-0 pt-4">
         <Col lg={4}>
           <div className="marginnav">
             <img className="ptprfl" src={dataprofile.photo} />

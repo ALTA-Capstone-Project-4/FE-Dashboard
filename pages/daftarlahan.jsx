@@ -10,21 +10,14 @@ import axios from "axios";
 const DaftarLahan = () => {
   const router = useRouter();
   const gudangID = router.query.gudangID;
-
-  console.log("gudang id", gudangID);
-
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
-
-  // const [id, setID] = useState("");
   const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     getLahan();
   }, []);
-
-  console.log("ini data", datas);
 
   const tambahlahan = (datas) => {
     Router.push({
@@ -156,7 +149,6 @@ const DaftarLahan = () => {
           </Row>
         </Col>
       </Row>
-
       <Footer />
     </div>
   );

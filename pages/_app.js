@@ -8,7 +8,7 @@ import "../styles/registermitrastyle.css";
 import "../styles/comeditlahan.css";
 import "../styles/adminverif.css";
 import "../styles/detailmitra.css";
-import "../styles/profilemitra.css";
+import "../styles/profilmitra.css";
 import "../styles/myfavorite.css";
 import "../styles/checkout.css";
 import "../styles/detaillahanclient.css";
