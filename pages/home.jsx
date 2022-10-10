@@ -1,4 +1,3 @@
-
 import Footer from "../component/footer";
 import { InputGroup, Form, Card, Button, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,7 +7,6 @@ import Router from "next/router";
 import axios from "axios";
 import dynamic from "next/dynamic";
 
-
 // export const getServerSideProps = async () => {
 //   const response = await axios.get("https://group4.altaproject.online/gudang?page=1",
 //   {
@@ -16,7 +14,7 @@ import dynamic from "next/dynamic";
 //       Authorization: `Bearer ${getCookie("Token")}`,
 //     },
 //   });
- 
+
 //   return {
 //     props: {
 //       datas: response.data.data,
@@ -24,14 +22,12 @@ import dynamic from "next/dynamic";
 //   };
 // };
 
-
 const Home = () => {
   const [datas, setDatas] = useState([]);
   const [search, setSearch] = useState(null);
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
     ssr: false,
   });
-
 
   useEffect(() => {
     getHome();
@@ -73,12 +69,11 @@ const Home = () => {
     if (search) {
       return datas.address.toLowerCase().includes(search.toLowerCase());
     } else return datas;
-  }
+  };
 
   const filteredList = (datas, search) => {
-    return datas
-    .filter(data => bySearch(data, search));
-  }
+    return datas.filter((data) => bySearch(data, search));
+  };
 
   return (
     <div>
@@ -98,7 +93,7 @@ const Home = () => {
           <p className="fs-2 fw-bold white-font text-center">Mau Cari Tempat Penitipan?</p>
           <div className="container">
             <InputGroup>
-              <Form.Control type="search" placeholder="Cari.." aria-label="Input group example" aria-describedby="btnGroupAddon" onChange={e => setSearch(e.target.value)} />
+              <Form.Control type="search" placeholder="Cari.." aria-label="Input group example" aria-describedby="btnGroupAddon" onChange={(e) => setSearch(e.target.value)} />
               <button className=" yellow-background-hover white-font button-search px-4 py-1 fw-bold">Cari</button>
             </InputGroup>
           </div>
@@ -129,13 +124,13 @@ const Home = () => {
             })} */}
             {filteredList(datas, search).map((data, index) => {
               return (
-                <Col className="pb-5">
-                  <div key={index} className="col">
-                    <Card style={{ width: "18rem"}}>
-                      <Card.Img variant="top" src={data.foto_lahan} style={{ height: "18rem"}}/>
+                <Col key={index} className="pb-5">
+                  <div className="col">
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img variant="top" src={data.foto_lahan} style={{ height: "18rem" }} />
                       <Card.Body>
                         <Card.Text>{data.nama}</Card.Text>
-                        <Card.Text>Rp. {(data.harga).toLocaleString("id-ID")}</Card.Text>
+                        <Card.Text>Rp. {data.harga.toLocaleString("id-ID")}</Card.Text>
                         <Card.Text>{data.address}</Card.Text>
                         <Button onClick={() => goCheck(data)}>Go Check</Button>
                       </Card.Body>

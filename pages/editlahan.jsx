@@ -7,7 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Router from "next/router";
 
-const editlahan = () => {
+const Editlahan = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
@@ -130,4 +130,4 @@ const editlahan = () => {
   );
 };
 
-export default editlahan;
+export default Editlahan;

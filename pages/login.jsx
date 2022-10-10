@@ -2,7 +2,7 @@ import { setCookie } from "cookies-next";
 import Router from "next/router";
 import { useState } from "react";
 import { Form } from "react-bootstrap";
-
+import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,31 +15,29 @@ const Login = () => {
       password: password,
     });
 
-
-  var config = {
-    method: 'post',
-    url: 'https://group4.altaproject.online/login',
-    headers: { 
-      'Content-Type': 'application/json'
-    },
-    data : data
-  };
+    var config = {
+      method: "post",
+      url: "https://group4.altaproject.online/login",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
 
     axios(config)
       .then(function (response) {
         setCookie("Token", response.data.data.token);
         setCookie("Name", response.data.data.name);
         alert("Berhasil Masuk");
-        {(response.data.data.role) === "admin" ? Router.push("/adminverification") :
-        (response.data.data.role) === "mitra" ? Router.push("/profilmitra") :
-        (response.data.data.role) === "penitip" ? Router.push("/home") : null}
+        {
+          response.data.data.role === "admin" ? Router.push("/adminverification") : response.data.data.role === "mitra" ? Router.push("/profilmitra") : response.data.data.role === "penitip" ? Router.push("/home") : null;
+        }
         console.log(JSON.stringify(response.data));
       })
       .catch(function (error) {
         alert("Gagal Masuk");
         console.log(error);
       });
-        
   };
 
   return (
@@ -62,7 +60,7 @@ const Login = () => {
         </button>
         <div>
           <p className="plog text-center mt-1">
-            Tidak Punya Akun? <a href="/registerclient">Daftar</a>
+            Tidak Punya Akun? <Link href="/registerclient">Daftar</Link>
           </p>
         </div>
       </div>
