@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Router from "next/router";
+import Link from "next/link";
 
 const RegisterClient = () => {
   const [name, setName] = useState("");
@@ -71,9 +72,9 @@ const RegisterClient = () => {
           <div className="txtsdh text-center">
             <p className="mt-1">
               Sudah Punya Akun ?
-              <a className="txtoren" href="/login">
+              <Link className="txtoren" href="/login">
                 Masuk
-              </a>
+              </Link>
             </p>
           </div>
         </div>

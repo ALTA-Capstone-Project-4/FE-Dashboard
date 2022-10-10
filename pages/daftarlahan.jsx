@@ -105,12 +105,12 @@ const DaftarLahan = () => {
 
   const detail = (datas) => {
     Router.push({
-      pathname:("/detaillahanclient"),
-      query:{
-        lahan_id: datas.ID
-      }
-    })
-  }
+      pathname: "/detaillahanclient",
+      query: {
+        lahan_id: datas.ID,
+      },
+    });
+  };
 
   return (
     <div>
@@ -131,9 +131,9 @@ const DaftarLahan = () => {
               return (
                 <Col key={index}>
                   <div className="cardfav">
-                    <img className="gambarfav" src={datas.FotoLahan} onClick={() => detail(datas)}/>
+                    <img className="gambarfav" src={datas.FotoLahan} onClick={() => detail(datas)} />
                     <p className="txtmf">{datas.Nama}</p>
-                    <p className="txtmf">Rp. {(datas.Harga).toLocaleString("id-ID")}</p>
+                    <p className="txtmf">Rp. {datas.Harga.toLocaleString("id-ID")}</p>
                     <div className="btndf">
                       <button onClick={() => editlahan(datas)} className="btnpsndf">
                         Edit

@@ -7,7 +7,7 @@ import Router from "next/router";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 
-const addlahan = () => {
+const Addlahan = () => {
   const NavbarMitra = dynamic(() => import("../component/navbar-mitra"), {
     ssr: false,
   });
@@ -129,4 +129,4 @@ const addlahan = () => {
   );
 };
 
-export default addlahan;
+export default Addlahan;
