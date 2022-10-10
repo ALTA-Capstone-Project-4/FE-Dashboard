@@ -60,9 +60,10 @@ const MyRoom = () => {
               <p className="fs-4 fw-semibold green-font">Barang Yang disimpan</p>
               <p className="pt-1"> Nama: {item.nama_barang}</p>
               <div className="pt-4 white-font text-center">
-                { item.status_pembayaran === "paid" ?  <div className="button-search green-background py-1 mt-4">Status Pembayaran: {item.status_pembayaran}</div> :
-                item.status_pembayaran === "pending" ?  <div className="button-search yellow-background py-1 mt-4">Status Pembayaran: {item.status_pembayaran}</div> :
-                item.status_pembayaran === "failed" ? <div className="button-search red-background py-1 mt-4">Status Pembayaran: {item.status_pembayaran}</div> : null}
+                { item.status_pembayaran === "paid" ?  <div className="button-search green-background py-1 mt-4">Status Sewa: Disewa</div> :
+                item.status_pembayaran === "pending" ?  <div className="button-search yellow-background py-1 mt-4">Status Pembayaran: Menunggu Pembayaran</div> :
+                item.status_pembayaran === "failed" ? <div className="button-search red-background py-1 mt-4">Status Sewa: Gagal Dibayar</div> : 
+                item.status_pembayaran === "expired" ? <div className="button-search bg-primary py-1 mt-4">Status Sewa: Selesai Disewa</div>:null}
               </div>
             </div>
         </div>

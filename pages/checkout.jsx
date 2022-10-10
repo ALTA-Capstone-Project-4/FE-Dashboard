@@ -40,14 +40,25 @@ const Checkout = () => {
       }
     })
     .then((res) => {
-      console.log(res);
+      console.log("ini result", res);
       alert('berhasil checkout')
-      // Router.push("/pembayaran")
+      Router.push({
+        pathname:("/pembayaran"),
+        query: {
+          bank: res.data.data.bank,
+          billNumber: res.data.data.billNumber,
+          grossAmount: res.data.data.grossAmount,
+          transactionExpired: res.data.data.transactionExpired,
+          transactionTime: res.data.data.transactionTime
+        }
+      })
     })
     .catch((err) => {
       alert('gagal');
     })
   }
+
+  const price = new Number(data.query.harga).toLocaleString("id-ID");
 
   return (
     <div>
@@ -56,13 +67,13 @@ const Checkout = () => {
       <Row className="gx-0">
         <Col lg={4} className="mb-4">
           <div className="checkl">
-            <div className="checkpic">
+            <div className="checkpic" >
               <img src={data.query.foto_lahan} alt="" className="img-fluid" />
             </div>
             <div>
               <h5>{data.query.gudang}</h5>
               <h5>{data.query.lahan}</h5>
-              <h5>Rp. {data.query.harga}</h5>
+              <h5>Rp. {price}</h5>
             </div>
           </div>
         </Col>
@@ -89,7 +100,7 @@ const Checkout = () => {
               </Col>
               <Col sm={6}>
                 <Form.Group className="mb-5">
-                  <Form.Label className="mb-0">Foto Yang akan dititipkan</Form.Label>
+                  <Form.Label className="mb-0">Foto Barang Titipan</Form.Label>
                   <Form.Control type="file" onChange={(e) => setItemImage(e.target.files[0])}/>
                 </Form.Group>
                 <Form.Select aria-label="Default select example" onChange={(e) => setPayment(e.target.value)}>
@@ -101,7 +112,6 @@ const Checkout = () => {
               </Col>
             </Row>
             <div className="gas">
-              {/* <h5 className="total">Total : Rp.</h5> */}
               <button className="btnpsna" onClick={handleCheckout}>Pesan</button>
             </div>
           </div>

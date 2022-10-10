@@ -26,7 +26,7 @@ const RegisterMitra = () => {
     formData.append("role", role);
   
     axios
-    .post("https://group4.altaproject.online/login", formData)
+    .post("https://group4.altaproject.online/register", formData)
     .then((res) => {
       alert("Berhasil Registrasi");
       Router.push("/login");

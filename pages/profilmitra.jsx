@@ -133,7 +133,8 @@ const ProfilMitra = () => {
         method: "post",
         url: "https://group4.altaproject.online/gudang",
         headers: {
-          "Content-Type": "application/json",
+          // "Content-Type": "application/json",
+           Authorization: `Bearer ${getCookie("Token")}`,
         },
         data: data,
       };
@@ -169,8 +170,8 @@ const ProfilMitra = () => {
             console.log("e", e);
             let loc = { lat: e.lng, lng: e.lat};
             setLocation(loc);
-            setLatitude(e.lat);
-            setLongitude(e.lng);
+            setLatitude((e.lat).toString());
+            setLongitude((e.lng).toString());
             }}
           />
         </Modal.Body>
@@ -192,32 +193,28 @@ const ProfilMitra = () => {
     const [locations, setLocations] = useState({ lng: -6.1753942, lat: 106.827183});
 
     const clickTambah = () => {
-      var axios = require("axios");
-      var data = JSON.stringify({
+      axios
+      .put("https://group4.altaproject.online/gudang", 
+      {
         name: namas,
         address: alamats,
         latitude: latitudes,
         longitude: longitudes,
-      });
-
-      var config = {
-        method: "put",
-        url: "https://group4.altaproject.online/gudang",
+      },
+      {
         headers: {
-          "Content-Type": "application/json",
-        },
-        data: data,
-      };
+          Authorization: `Bearer ${getCookie("Token")}`,
+        }
+      })
 
-      axios(config)
-        .then((response) => {
-          alert("Berhasil Update");
-          console.log(JSON.stringify(response.data));
-        })
-        .catch((error) => {
-          alert("Gagal Update");
-          console.log(error);
-        });
+      .then((res) => {
+        console.log(res);
+        alert("Berhasil Update");
+      })
+      .catch((err) => {
+        alert("Gagal Update");
+        console.log(err);
+      })
     };
 
     return (
@@ -240,8 +237,8 @@ const ProfilMitra = () => {
             console.log("e", e);
             let loc = { lat: e.lng, lng: e.lat};
             setLocations(loc);
-            // setLatitudes(e.lat);
-            // setLongitudes(e.lng);
+            setLatitudes((e.lat).toString());
+            setLongitudes((e.lng).toString());
             }}
           />
           {/* {"lng: " + location.lng}
@@ -267,6 +264,8 @@ const ProfilMitra = () => {
     });
   };
 
+  // const latitude = parseInt(datas.gudanglatitude)
+  // const longitude = parseInt(datas.gudanglongitude)
 
   return (
     <div>
@@ -279,7 +278,7 @@ const ProfilMitra = () => {
         </Col>
         <Col lg={8}>
           <div className="tambahgd">
-            { datas.gudangname === null ? 
+            { datas.gudangname == null ? 
               <button className="btntambah" onClick={() => setModalShoww(true)}>Tambah Gudang</button> :
               null }
             <TambahGudang show={modalShoww} onHide={() => setModalShoww(false)} />
@@ -309,9 +308,9 @@ const ProfilMitra = () => {
           <p>Lokasi Gudang : </p>
           <div className="lokmap">
             <MapsShow 
-            lat={51.505}
-            long={-0.09}
-            size={{ height: "300px", width: "100%"}}
+            lat={-6.178742269779404}
+            long={106.804575920105}
+            size={{ height: "200px", width: "100%"}}
             popup={datas.gudangname}
             />
           </div>

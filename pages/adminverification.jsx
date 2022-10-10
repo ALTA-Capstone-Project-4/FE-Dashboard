@@ -63,6 +63,7 @@ const adminverification = () => {
     .then((res) => {
       alert("berhasil diverifikasi")
       getVerifMitra();
+      getListMitra();
     })
   }
 

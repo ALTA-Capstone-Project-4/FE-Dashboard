@@ -67,8 +67,7 @@ const DetailLahanClient = () => {
               <img src={detail.foto_lahan} className="img-fluid" style={{ height: "16rem"}}/>
             </div>
             <p className="text-center fs-4 green-font">Rp. {price}</p>
-             {/* {(detail.harga).toLocaleString("id-ID")} */}
-            <div className="yellow-background text-center mt-5 mx-5">Status: {detail.status}</div>
+            <div className="yellow-background rounded mt-5 mx-5"><p className="text-center white-font">Status: {detail.status}</p></div>
           </div>
         </div>
       </div>

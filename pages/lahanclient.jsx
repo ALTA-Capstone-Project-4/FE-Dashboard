@@ -91,6 +91,8 @@ const LahanClient = () => {
     })
   }
 
+  console.log(typeof gudang.latitude)
+
   return (
     <div>
       <div>
@@ -117,8 +119,8 @@ const LahanClient = () => {
               <MapsShow
               // lat={gudang.latitude}
               // long={gudang.longitude}
-              lat={-6.1753942}
-              long={106.827183}
+              lat={-6.178742269779404}
+              long={106.804575920105}
               size={{ height: "300px", width: "100%"}}
               popup={gudang.name}
               />
