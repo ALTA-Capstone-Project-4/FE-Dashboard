@@ -16,14 +16,14 @@ const MyFavorit = () => {
   }, []);
   console.log(datas);
   const getFavorite = () => {
-    var axios = require('axios');
+    var axios = require("axios");
 
     var config = {
-      methode: 'get',
-      url: 'https://group4.altaproject.online/favorite',
+      methode: "get",
+      url: "https://group4.altaproject.online/favorite",
       headers: {
         Authorization: `Bearer ${getCookie("Token")}`,
-      }
+      },
     };
 
     axios(config)
@@ -34,7 +34,7 @@ const MyFavorit = () => {
       .catch(function (error) {
         console.log(error);
       });
-  }
+  };
 
   const clickPesan = (datas) => {
     console.log(datas);
@@ -60,12 +60,12 @@ const MyFavorit = () => {
 
     axios(config)
       .then(function (response) {
-        alert("Berhasil Dihapus")
+        alert("Berhasil Dihapus");
         getFavorite();
       })
       .catch(function (error) {
         console.log(error);
-        alert("Gagal Hapus")
+        alert("Gagal Hapus");
       });
   };
 
@@ -73,27 +73,30 @@ const MyFavorit = () => {
     <div>
       <NavbarClient />
       <Row className="gx-0  min-vh-100">
-      <h3 className="favoritsaya marginnav">Favorit Saya</h3>
-        {datas.map((datas, index) => {
+        <h3 className="favoritsaya marginnav">Favorit Saya</h3>
+        {datas?.map((datas, index) => {
           return (
             <Col key={index}>
-          <Row className="contenmyfav">
-            <Col>
-              <div className="cardfav">
-                <img className="gambarfav" src={datas.LahanFotoLahan} />
-                <p className="txtmf">{datas.LahanName}</p>
-                <p className="txtmf">{datas.LahanHarga}</p>
-                <div className='btndf'>
-                  <button className="btnpsndf" onClick={clickPesan}>Pesan</button>
-                  <button className="btnpsndf2" onClick={() => clickDelete(datas)}>Hapus</button>
-                </div>
-              </div>
+              <Row className="contenmyfav">
+                <Col>
+                  <div className="cardfav">
+                    <img className="gambarfav" src={datas.LahanFotoLahan} />
+                    <p className="txtmf">{datas.LahanName}</p>
+                    <p className="txtmf">{datas.LahanHarga}</p>
+                    <div className="btndf">
+                      <button className="btnpsndf" onClick={clickPesan}>
+                        Pesan
+                      </button>
+                      <button className="btnpsndf2" onClick={() => clickDelete(datas)}>
+                        Hapus
+                      </button>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
             </Col>
-          </Row>
-        </Col>
-          )
+          );
         })}
-        
       </Row>
 
       <Footer />
