@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
-import Router, { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
+import Router, { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import Footer from "../component/footer";
 
 const LahanClient = () => {
@@ -134,8 +134,10 @@ const LahanClient = () => {
           <Row>
             {datas?.map((datas, index) => {
               return (
+
                 <Col key={index}>
                   <div className="crdlhn">
+
                     <div>
                       <img className="imglhnn" src={datas.FotoLahan} onClick={() => detail(datas)} />
                     </div>

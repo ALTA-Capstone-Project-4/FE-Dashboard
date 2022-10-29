@@ -1,8 +1,11 @@
+
 import Footer from "../component/footer";
 import dynamic from "next/dynamic";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
+import dynamic from "next/dynamic";
+import React, { useEffect, useState } from "react";
+import Footer from "../component/footer";
 
 const MyRoom = () => {
   const NavbarClient = dynamic(() => import("../component/navbar-client"), {
@@ -34,7 +37,8 @@ const MyRoom = () => {
       <NavbarClient />
       <div className="container after-navbar pb-5 mb-5">
         <p className="green-font fs-2 fw-bold pb-4 text-center">Daftar Lahan</p>
-        {myRoom.map((item, index) => {
+
+        {myRoom?.map((item, index) => {
           const mulai = new Date(item.mulai_sewa).toLocaleDateString();
           const akhir = new Date(item.akhir_sewa).toLocaleDateString();
 
