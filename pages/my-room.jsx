@@ -1,6 +1,4 @@
 
-import Footer from "../component/footer";
-import dynamic from "next/dynamic";
 import axios from "axios";
 import { getCookie } from "cookies-next";
 import dynamic from "next/dynamic";
