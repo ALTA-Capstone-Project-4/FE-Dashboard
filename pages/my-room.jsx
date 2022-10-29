@@ -1,8 +1,8 @@
-import Footer from "../component/footer"
-import dynamic from "next/dynamic"
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
+import dynamic from "next/dynamic";
+import React, { useEffect, useState } from "react";
+import Footer from "../component/footer";
 
 
 const MyRoom = () => {
@@ -38,13 +38,11 @@ const MyRoom = () => {
         <NavbarClient/>
         <div className="container after-navbar pb-5 mb-5">
         <p className="green-font fs-2 fw-bold pb-4 text-center">Daftar Lahan</p>
-        {myRoom.map((item) => {
-
+        {myRoom?.map((item, index) => {
           const mulai = new Date(item.mulai_sewa).toLocaleDateString();
           const akhir = new Date(item.akhir_sewa).toLocaleDateString();
-
           return(
-            <div style={{ borderWidth: '2px', borderStyle: 'solid', borderRadius: '5px'}} className="yellow-font p-2 row d-flex my-4">
+            <div style={{ borderWidth: '2px', borderStyle: 'solid', borderRadius: '5px'}} className="yellow-font p-2 row d-flex my-4" key={index}>
             <div className="col m-2">
               <img src={item.foto_barang} className="img-fluid" style={{ height: "16rem"}}/>
             </div>
