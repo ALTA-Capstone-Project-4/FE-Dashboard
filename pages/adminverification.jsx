@@ -6,7 +6,7 @@ import { getCookie } from "cookies-next";
 import axios from "axios";
 import dynamic from "next/dynamic";
 
-const adminverification = () => {
+const Adminverification = () => {
   const [verifMitra, setVerifMitra] = useState([]);
   const [listMitra, setListMitra] = useState([]);
   const NavbarAdmin = dynamic(() => import("../component/navbar-admin"), {
@@ -14,13 +14,12 @@ const adminverification = () => {
   });
 
   const goDetail = (user) => {
-  Router.push({
-    pathname: `${user.name}`,
-    query: {
-      id: user.id
-    }
-  },);
-    
+    Router.push({
+      pathname: `${user.name}`,
+      query: {
+        id: user.id,
+      },
+    });
   };
 
   const getVerifMitra = () => {
@@ -51,52 +50,52 @@ const adminverification = () => {
 
   const accept = (id) => {
     axios
-    .put(`https://group4.altaproject.online/mitra/verify/${id}`,
-    {
-      status: "verified"
-    },
-    {
-      headers : { Authorization: `Bearer ${getCookie("Token")}`}
-    }
-    )
+      .put(
+        `https://group4.altaproject.online/mitra/verify/${id}`,
+        {
+          status: "verified",
+        },
+        {
+          headers: { Authorization: `Bearer ${getCookie("Token")}` },
+        }
+      )
 
-    .then((res) => {
-      alert("berhasil diverifikasi")
-      getVerifMitra();
-      getListMitra();
-    })
-  }
+      .then((res) => {
+        alert("berhasil diverifikasi");
+        getVerifMitra();
+        getListMitra();
+      });
+  };
 
   const denied = (id) => {
     axios
-    .put(`https://group4.altaproject.online/mitra/verify/${id}`,
-    {
-      status: "rejected"
-    },
-    {
-      headers : { Authorization: `Bearer ${getCookie("Token")}`}
-    }
-    )
+      .put(
+        `https://group4.altaproject.online/mitra/verify/${id}`,
+        {
+          status: "rejected",
+        },
+        {
+          headers: { Authorization: `Bearer ${getCookie("Token")}` },
+        }
+      )
 
-    .then((res) => {
-      alert("berhasil dihapus dari daftar verifikasi")
-      getVerifMitra();
-    })
-  }
+      .then((res) => {
+        alert("berhasil dihapus dari daftar verifikasi");
+        getVerifMitra();
+      });
+  };
 
   const deleteMitra = (id) => {
     axios
-    .delete(`https://group4.altaproject.online/mitra/${id}`,
-    {
-      headers : { Authorization: `Bearer ${getCookie("Token")}`}
-    }
-    )
+      .delete(`https://group4.altaproject.online/mitra/${id}`, {
+        headers: { Authorization: `Bearer ${getCookie("Token")}` },
+      })
 
-    .then((res) => {
-      alert("akun berhasil dihapus")
-      getListMitra();
-    })
-  }
+      .then((res) => {
+        alert("akun berhasil dihapus");
+        getListMitra();
+      });
+  };
 
   useEffect(() => {
     getVerifMitra();
@@ -108,17 +107,21 @@ const adminverification = () => {
       <NavbarAdmin />
       <div className="contenverif mx-auto p-3 after-navbar">
         <h2>Verifikasi Mitra Gudang</h2>
-        {verifMitra.map((user) => {
+        {verifMitra.map((user, index) => {
           return (
-            <Row>
+            <Row key={index}>
               <Col sm={6}>
                 <button className="btnmit black-font" type="submit" onClick={() => goDetail(user)}>
                   {user.name}
                 </button>
               </Col>
               <Col sm={6} className="p-0 btnright">
-                <button className="me-4 btnacc"  onClick={() => accept(user.id)}>Terima</button>
-                <button className="me-4 btnrej"  onClick={() => denied(user.id)}>Tolak</button>
+                <button className="me-4 btnacc" onClick={() => accept(user.id)}>
+                  Terima
+                </button>
+                <button className="me-4 btnrej" onClick={() => denied(user.id)}>
+                  Tolak
+                </button>
               </Col>
             </Row>
           );
@@ -126,16 +129,18 @@ const adminverification = () => {
       </div>
       <div className="contenmitra mx-auto p-3">
         <h2>Daftar Mitra Gudang</h2>
-        {listMitra?.map((user) => {
+        {listMitra?.map((user, index) => {
           return (
-            <Row>
+            <Row key={index}>
               <Col sm={6}>
                 <button className="btnmit black-font" onClick={() => goDetail(user)}>
                   {user.name}
                 </button>
               </Col>
               <Col sm={6} className="p-0 btnright">
-                <button className="me-4 btnrej" onClick={() => deleteMitra(user.id)}>Hapus</button>
+                <button className="me-4 btnrej" onClick={() => deleteMitra(user.id)}>
+                  Hapus
+                </button>
               </Col>
             </Row>
           );
@@ -146,4 +151,4 @@ const adminverification = () => {
   );
 };
 
-export default adminverification;
+export default Adminverification;
